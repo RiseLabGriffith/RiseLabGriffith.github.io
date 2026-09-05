@@ -1,2 +1,52 @@
-# Open positions shown on the Join Us page. Remove or set open: false when filled.
-[]
+# Open positions shown on the Join Us page (and counted on the home page). Set open: false or remove an entry when filled.
+# Fields: title, kind (phd | postdoc | visiting | honours | masters | intern), supervisors (people ids), layers, summary,
+# link (optional), open (true | false).
+- title: PhD scholarships in trustworthy AI and applied cryptography
+  kind: phd
+  supervisors: [leo-zhang]
+  layers: [R, I, S]
+  summary: Adversarial, backdoor, poisoning and privacy attacks and defences for machine learning, jailbreak and injection attacks on LLMs, and privacy-preserving computation and authentication in emerging settings. Email a CV, transcript and English test result. Competitive applicants usually have a GPA above 80 and first-authored peer-reviewed publications.
+  link: https://leozhangcs.github.io/prosStudents/
+  open: true
+- title: PhD scholarships in LLM and AI agent security
+  kind: phd
+  supervisors: [yi-liu, leo-zhang]
+  layers: [I, E]
+  summary: Security of LLM agents, agent skill and tool ecosystems, prompt injection and jailbreak defences, automated penetration testing and software testing with AI. Strong programming skills and an interest in building real systems are essential.
+  open: true
+- title: PhD scholarships in AI security for energy systems, adversarial ML and AI watermarking
+  kind: phd
+  supervisors: [wei-song]
+  layers: [I, E, R]
+  summary: Self-motivated students to help build a research group in adversarial machine learning, AI watermarking and content authenticity, and AI security for distributed energy assets, with links to funded industry projects. Email a CV and transcript.
+  open: true
+- title: PhD scholarships in cryptography and post-quantum protocols
+  kind: phd
+  supervisors: [qinyi-li]
+  layers: [S]
+  summary: Lattice-based cryptography, searchable and functional encryption, anonymous credentials and secure protocols for distributed and AI-enabled systems. A strong mathematics background is expected.
+  open: true
+- title: PhD scholarships in security for AI and trustworthy AI systems
+  kind: phd
+  supervisors: [he-zhang]
+  layers: [R, I, S]
+  summary: Privacy-preserving technologies for AI security, trustworthy graph learning, machine unlearning, LLM watermarking, and the interplay between robustness, explainability, privacy and fairness.
+  open: true
+- title: PhD scholarships in trustworthy AI and privacy-preserving computation
+  kind: phd
+  supervisors: [yanjun-zhang]
+  layers: [I, S]
+  summary: Adversarial, backdoor, poisoning and privacy attacks and defences in federated and distributed learning, differential privacy, and privacy analysis of deployed applications.
+  open: true
+- title: Honours, Masters and capstone projects in secure AI and content authenticity
+  kind: honours
+  supervisors: [wei-song, yi-liu]
+  layers: [I, E]
+  summary: Thesis and capstone projects linked to funded projects on secure AI for energy systems, watermark verification for AI-generated content, and AI agent security tooling. Open to Griffith students.
+  open: true
+- title: Visiting scholars and visiting PhD students
+  kind: visiting
+  supervisors: [leo-zhang]
+  layers: [R, I, S]
+  summary: RISE members can host China Scholarship Council visiting scholars and visiting PhD students, typically for six to twelve months, working on a topic aligned with one of the four layers.
+  open: true

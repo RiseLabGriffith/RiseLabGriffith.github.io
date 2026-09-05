@@ -64,3 +64,10 @@ def test_projects_index_and_detail(built_site):
     detail = built_site("/projects/secure-auditable-ai-agents/")
     assert "Status" in detail and 'class="tag tag--I"' in detail
     assert 'class="facts"' in detail
+
+
+def test_news_page_timeline_and_events(built_site):
+    html = built_site("/news/")
+    assert html.count('class="news-item') >= 12
+    assert "Upcoming" in html and 'class="timeline__year"' in html
+    assert 'class="event' in html
