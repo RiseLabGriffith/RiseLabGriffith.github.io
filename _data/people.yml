@@ -1,0 +1,33 @@
+# Lab members. `id` is the join key used by publications, projects, news and openings.
+# role: director | academic | student | visitor | joint | alumni. Full profiles are added in a later task.
+- id: leo-zhang
+  name: Leo Zhang
+  aliases: [Leo Yu Zhang]
+  role: director
+  position: Associate Professor · Lab Director
+  layers: [R, I, S]
+- id: yanjun-zhang
+  name: Yanjun Zhang
+  role: academic
+  position: Lecturer
+  layers: [I, S]
+- id: qinyi-li
+  name: Qinyi Li
+  role: academic
+  position: Lecturer
+  layers: [S]
+- id: he-zhang
+  name: He Zhang
+  role: academic
+  position: Lecturer
+  layers: [R, I, S]
+- id: yi-liu
+  name: Yi Liu
+  role: academic
+  position: Lecturer
+  layers: [I, E]
+- id: wei-song
+  name: Wei Song
+  role: academic
+  position: Lecturer
+  layers: [I, E]
