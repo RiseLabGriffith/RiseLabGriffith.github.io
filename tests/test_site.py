@@ -79,3 +79,11 @@ def test_home_sections(built_site):
         assert marker in html, marker
     assert html.count('class="pub ') <= 6
     assert html.count('data-letter=') == 4
+
+
+def test_about_and_join(built_site):
+    about = built_site("/about/")
+    join = built_site("/join/")
+    assert "Vision" in about and "How we work" in about and "TrustAGI" not in about
+    assert "GUPRS" in join and "Open positions" in join and "mailto:" in join
+    assert join.count('class="opening') >= 6
