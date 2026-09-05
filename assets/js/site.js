@@ -290,7 +290,7 @@
         countUp(en.target);
       });
     }, { threshold: 0.4 });
-    counters.forEach(function (el) { el.textContent = '0'; seen.observe(el); });
+    counters.forEach(function (el) { seen.observe(el); });
   }
 
   window.RISE = { $: $, $$: $$, reducedMotion: reducedMotion };
