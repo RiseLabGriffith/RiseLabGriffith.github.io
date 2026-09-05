@@ -1,0 +1,12 @@
+<header class="site-header">
+  <nav class="nav-wrap" aria-label="Primary navigation">
+    <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-mark">RISE</span><span>RISE Lab</span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Open navigation menu"><span></span></button>
+    <ul class="nav-links" id="main-menu">
+      {% for item in site.data.navigation %}
+      <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
+

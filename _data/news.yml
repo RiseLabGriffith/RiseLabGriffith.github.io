@@ -1,0 +1,11 @@
+# Add new items at the top. Use YYYY-MM-DD for the date.
+- date: 2026-09-05
+  title: RISE Lab website under development
+  text: We are building the new RISE Lab website. Research and team updates will be added progressively.
+- date: 2026-09-01
+  title: Research updates coming soon
+  text: News about publications, projects, seminars and collaborations will appear here.
+- date: 2026-08-01
+  title: Welcome to RISE Lab
+  text: RISE connects cybersecurity, applied cryptography, privacy-preserving technologies and secure software engineering.
+

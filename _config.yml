@@ -1,0 +1,17 @@
+title: RISE Lab
+tagline: Responsible, Intelligent and Secure Engineering
+description: Cybersecurity research initiative at Griffith University
+url: "https://riselabgriffith.github.io"
+baseurl: "/RiseLabGriffith"
+markdown: kramdown
+permalink: pretty
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+exclude:
+  - README.md
+  - RISE Lab Proposal-v2.docx
+  - vendor
+
