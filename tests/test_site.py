@@ -46,3 +46,11 @@ def test_people_page_groups_and_members(built_site):
     assert 'data-people-filter="I"' in html
     assert 'src="/assets/img/people/leo-zhang.jpg"' in html
     assert 'class="person__avatar"' in html  # students without photos get initials
+
+
+def test_publications_page_has_entries_and_tools(built_site):
+    html = built_site("/publications/")
+    assert html.count('class="pub ') >= 60
+    assert "data-pub-search" in html and "data-bibtex" in html and "data-pub-count" in html
+    assert "<strong>Leo Zhang</strong>" in html or "<strong>Leo Yu Zhang</strong>" in html
+    assert 'id="y2026"' in html

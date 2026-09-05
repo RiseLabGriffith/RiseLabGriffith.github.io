@@ -75,3 +75,70 @@
   .people-grid--detail .person { grid-template-columns: 84px minmax(0, 1fr); gap: 16px; padding: 18px; }
   .people-grid--detail .person__name { font-size: 1.15rem; }
 }
+
+// Publications --------------------------------------------------------------
+.pub-toolbar {
+  display: grid; gap: 12px; margin-bottom: 20px; padding: 16px 18px;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
+  .chip strong { font-family: var(--font-display); font-weight: 600; margin-right: 2px; }
+}
+.pub-toolbar__search { position: relative; }
+.pub-toolbar__input {
+  width: 100%; padding: 11px 44px 11px 14px; font: inherit; font-size: 1rem; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--line-strong); border-radius: 8px;
+  &:focus { outline: 2px solid var(--red); outline-offset: 1px; border-color: var(--red); }
+  &::-webkit-search-cancel-button { cursor: pointer; }
+}
+.pub-toolbar__kbd {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none;
+  font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); padding: 1px 6px;
+  border: 1px solid var(--line-strong); border-radius: 4px; background: var(--cloud);
+}
+.pub-toolbar__row { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+.pub-toolbar__select {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--muted);
+  select { font: inherit; font-size: 0.9rem; color: var(--ink); padding: 6px 30px 6px 10px; border-radius: 6px; border: 1px solid var(--line-strong); background: var(--paper); }
+}
+.pub-toolbar__check { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; color: var(--muted); cursor: pointer; input { accent-color: var(--red); } }
+.pub-toolbar__count { margin-left: auto; }
+.year-nav {
+  display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; margin: 0 0 28px;
+  a { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em; color: var(--muted); text-decoration: none; padding: 3px 8px; border-radius: 4px; &:hover { color: var(--ink); background: var(--cloud); } }
+}
+.pub-year { margin-bottom: 20px; }
+.year {
+  position: sticky; top: 68px; z-index: 5; display: flex; align-items: baseline; gap: 12px; margin: 0;
+  padding: 12px 0 10px; background: var(--paper); border-bottom: 1px solid var(--line-strong);
+  font-size: 1.6rem; scroll-margin-top: 68px;
+}
+.year__count { font-weight: 400; }
+.pub {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 24px; align-items: start;
+  padding: 14px 4px 14px 16px; border-bottom: 1px solid var(--line); scroll-margin-top: 130px;
+  transition: background .15s;
+  &:hover { background: var(--surface); }
+  &:target { background: var(--red-soft); }
+  &[data-selected="true"] .pub__title::before { content: "★"; color: var(--red); margin-right: 6px; font-size: 0.85em; }
+}
+.pub__title { font-family: var(--font-body); font-weight: 600; font-size: 1.02rem; line-height: 1.4; margin: 0 0 4px; a { text-decoration-color: transparent; &:hover { text-decoration-color: currentColor; } } }
+.pub__authors { font-size: 0.88rem; color: var(--muted); margin: 0 0 5px; line-height: 1.5; strong { color: var(--ink); font-weight: 600; } }
+.pub__meta { margin: 0; }
+.pub__venue { color: var(--ink); font-weight: 500; }
+.pub__badge { color: var(--navy); }
+.pub__selected { color: var(--red); }
+.pub__side { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.pub__links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.pub__link, .pub__bib {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.6;
+  padding: 2px 8px; border: 1px solid var(--line-strong); border-radius: 4px; background: transparent; color: var(--muted); text-decoration: none; cursor: pointer;
+  &:hover { color: var(--ink); border-color: var(--ink); }
+}
+.pub__bib { font: inherit; font-family: var(--font-mono); font-size: 0.68rem; }
+.pub-empty { padding: 40px 0; color: var(--muted); display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.pub-note { margin-top: 32px; color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 640px) {
+  .pub { grid-template-columns: 1fr; gap: 10px; padding-left: 12px; }
+  .pub__side { flex-direction: row; align-items: center; justify-content: space-between; }
+  .pub__links { justify-content: flex-start; }
+  .pub-toolbar__count { margin-left: 0; width: 100%; }
+}
