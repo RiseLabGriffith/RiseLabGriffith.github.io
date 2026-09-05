@@ -164,12 +164,14 @@ def check_people(data, root: pathlib.Path, errors: list) -> set:
             errors.append(f"{where}: 'links' must be a mapping of label to URL")
     # Supervisor references are checked after all ids are known.
     for person in people:
-        if isinstance(person, dict) and person.get("supervisor") is not None:
-            sup = person["supervisor"]
-            sups = sup if isinstance(sup, list) else [sup]
-            for s in sups:
-                if s not in ids:
-                    errors.append(f"people.yml '{person.get('id')}': supervisor '{s}' is not a known person id")
+        if not isinstance(person, dict):
+            continue
+        sup = person.get("supervisors", person.get("supervisor"))
+        if sup is None:
+            continue
+        for s in (sup if isinstance(sup, list) else [sup]):
+            if s not in ids:
+                errors.append(f"people.yml '{person.get('id')}': supervisor '{s}' is not a known person id")
     return ids
 
 

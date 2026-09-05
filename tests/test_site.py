@@ -36,3 +36,13 @@ def test_framework_stack_is_keyboard_accessible(built_site):
     assert html.count('class="stack__head"') == 4
     assert 'aria-expanded="false"' in html
     assert 'data-stack' in html
+
+
+def test_people_page_groups_and_members(built_site):
+    html = built_site("/people/")
+    for name in ["Leo Zhang", "Yanjun Zhang", "Qinyi Li", "He Zhang", "Yi Liu", "Wei Song"]:
+        assert name in html, name
+    assert html.count('class="person"') >= 20
+    assert 'data-people-filter="I"' in html
+    assert 'src="/assets/img/people/leo-zhang.jpg"' in html
+    assert 'class="person__avatar"' in html  # students without photos get initials

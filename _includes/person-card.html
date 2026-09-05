@@ -1,0 +1,50 @@
+{%- comment -%}
+One member card. Usage: {% include person-card.html person=p detail=true %}
+detail=true adds the biography (used for the director and academic members).
+{%- endcomment -%}
+{%- assign p = include.person -%}
+{%- assign parts = p.name | split: " " -%}
+{%- assign initials = parts.first | slice: 0 | append: parts.last | slice: 0, 1 -%}
+{%- assign first_initial = parts.first | slice: 0 -%}{%- assign last_initial = parts.last | slice: 0 -%}
+{%- assign profile = p.links.homepage | default: p.links.griffith | default: p.links.scholar -%}
+<article class="person" id="{{ p.id }}" data-layers="{{ p.layers | join: ' ' }}" data-role="{{ p.role }}">
+  {%- if p.photo -%}
+  <img class="person__photo" src="{{ '/assets/img/people/' | append: p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="180" height="180" loading="lazy">
+  {%- else -%}
+  <div class="person__avatar" aria-hidden="true">{{ first_initial }}{{ last_initial }}</div>
+  {%- endif -%}
+  <div class="person__body">
+    <h3 class="person__name">
+      {%- if profile -%}<a href="{{ profile }}" rel="noopener">{% if p.title %}{{ p.title }} {% endif %}{{ p.name }}</a>{%- else -%}{% if p.title %}{{ p.title }} {% endif %}{{ p.name }}{%- endif -%}
+      {%- if p.note %} <span class="person__note">{{ p.note }}</span>{% endif -%}
+    </h3>
+    <p class="person__position">{{ p.position }}{% if p.affiliation %} · {{ p.affiliation }}{% endif %}{% if p.since %} <span class="person__since">since {{ p.since }}</span>{% endif %}</p>
+    {%- if p.interests -%}<p class="person__interests">{{ p.interests | join: " · " }}</p>{%- endif -%}
+    {%- if include.detail and p.bio -%}<p class="person__bio">{{ p.bio }}</p>{%- endif -%}
+    {%- if p.supervisors -%}
+    <p class="person__supervisors meta">With
+      {%- for sid in p.supervisors -%}
+      {%- assign sup = site.data.people | where: "id", sid | first -%}
+      {%- if sup %} <a href="#{{ sup.id }}">{{ sup.name }}</a>{% unless forloop.last %},{% endunless %}{% endif -%}
+      {%- endfor -%}
+    </p>
+    {%- endif -%}
+    <div class="person__foot">
+      {%- if p.layers -%}
+      <div class="tag-row" aria-label="Framework layers">{% for L in p.layers %}{% include layer-tag.html letter=L %}{% endfor %}</div>
+      {%- endif -%}
+      {%- if p.email or p.links -%}
+      <ul class="icon-links" aria-label="Links for {{ p.name }}">
+        {%- if p.links.homepage %}<li><a href="{{ p.links.homepage }}" rel="noopener">Homepage</a></li>{% endif -%}
+        {%- if p.links.griffith %}<li><a href="{{ p.links.griffith }}" rel="noopener">Griffith Experts</a></li>{% endif -%}
+        {%- if p.links.scholar %}<li><a href="{{ p.links.scholar }}" rel="noopener">Scholar</a></li>{% endif -%}
+        {%- if p.dblp %}<li><a href="https://dblp.org/pid/{{ p.dblp }}.html" rel="noopener">DBLP</a></li>{% endif -%}
+        {%- if p.links.orcid %}<li><a href="{{ p.links.orcid }}" rel="noopener">ORCID</a></li>{% endif -%}
+        {%- if p.links.github %}<li><a href="{{ p.links.github }}" rel="noopener">GitHub</a></li>{% endif -%}
+        {%- if p.links.linkedin %}<li><a href="{{ p.links.linkedin }}" rel="noopener">LinkedIn</a></li>{% endif -%}
+        {%- if p.email %}<li><a href="mailto:{{ p.email }}">Email</a></li>{% endif -%}
+      </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</article>

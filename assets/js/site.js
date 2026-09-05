@@ -88,5 +88,34 @@
     });
   }
 
+  // ---- People layer filter -----------------------------------------------
+  var peopleFilters = $('[data-people-filters]');
+  if (peopleFilters) {
+    var pChips = $$('[data-people-filter]', peopleFilters);
+    var pCount = $('[data-people-count]', peopleFilters);
+    var cards = $$('.person[data-layers]');
+    function applyPeopleFilter(layer) {
+      var shown = 0;
+      cards.forEach(function (card) {
+        var ok = layer === 'all' || (' ' + card.getAttribute('data-layers') + ' ').indexOf(' ' + layer + ' ') !== -1;
+        card.hidden = !ok;
+        if (ok) { shown += 1; }
+      });
+      $$('[data-people-group]').forEach(function (group) {
+        var visible = $$('.person', group).some(function (c) { return !c.hidden; });
+        group.hidden = !visible;
+        var fold = $('details', group);
+        if (fold && layer !== 'all' && visible) { fold.open = true; }
+      });
+      pChips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.getAttribute('data-people-filter') === layer)); });
+      if (pCount) { pCount.textContent = layer === 'all' ? '' : shown + ' of ' + cards.length + ' members'; }
+    }
+    pChips.forEach(function (chip) {
+      chip.addEventListener('click', function () { applyPeopleFilter(chip.getAttribute('data-people-filter')); });
+    });
+    var initialLayer = new URLSearchParams(location.search).get('layer');
+    if (initialLayer && /^[RISE]$/.test(initialLayer)) { applyPeopleFilter(initialLayer); }
+  }
+
   window.RISE = { $: $, $$: $$, reducedMotion: reducedMotion };
 })();
