@@ -40,5 +40,53 @@
     toastTimer = setTimeout(function () { toast.hidden = true; }, 2200);
   };
 
+  // ---- Framework stack ----------------------------------------------------
+  $$('[data-stack]').forEach(function (stack) {
+    var heads = $$('.stack__head', stack);
+    function setOpen(btn, open) {
+      btn.setAttribute('aria-expanded', String(open));
+      var layer = btn.closest('.stack__layer');
+      if (layer) { layer.classList.toggle('is-open', open); }
+    }
+    heads.forEach(function (btn, i) {
+      setOpen(btn, false);
+      btn.addEventListener('click', function () {
+        var wasOpen = btn.getAttribute('aria-expanded') === 'true';
+        heads.forEach(function (h) { setOpen(h, false); });
+        setOpen(btn, !wasOpen);
+      });
+      btn.addEventListener('keydown', function (e) {
+        var j = null;
+        if (e.key === 'ArrowDown') { j = (i + 1) % heads.length; }
+        else if (e.key === 'ArrowUp') { j = (i - 1 + heads.length) % heads.length; }
+        else if (e.key === 'Home') { j = 0; }
+        else if (e.key === 'End') { j = heads.length - 1; }
+        if (j === null) { return; }
+        e.preventDefault();
+        heads[j].focus();
+      });
+    });
+  });
+
+  // ---- Research page scrollspy -------------------------------------------
+  var toc = $('[data-scrollspy]');
+  if (toc && 'IntersectionObserver' in window) {
+    var tocLinks = $$('a[href^="#"]', toc);
+    var byId = {};
+    tocLinks.forEach(function (l) { byId[l.getAttribute('href').slice(1)] = l; });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) { return; }
+        tocLinks.forEach(function (l) { l.removeAttribute('aria-current'); });
+        var link = byId[en.target.id];
+        if (link) { link.setAttribute('aria-current', 'true'); }
+      });
+    }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+    Object.keys(byId).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) { spy.observe(el); }
+    });
+  }
+
   window.RISE = { $: $, $$: $$, reducedMotion: reducedMotion };
 })();

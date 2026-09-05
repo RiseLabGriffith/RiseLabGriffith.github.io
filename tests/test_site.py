@@ -22,3 +22,17 @@ def test_theme_toggle_and_footer(built_site):
     assert "data-theme-toggle" in html
     assert "acknowledge" in html.lower()
     assert "Last updated" in html
+
+
+def test_research_page_lists_four_layers_and_fourteen_topics(built_site):
+    html = built_site("/research/")
+    for L in "RISE":
+        assert f'id="layer-{L}"' in html, L
+    assert html.count('class="topic ') == 14
+
+
+def test_framework_stack_is_keyboard_accessible(built_site):
+    html = built_site("/research/")
+    assert html.count('class="stack__head"') == 4
+    assert 'aria-expanded="false"' in html
+    assert 'data-stack' in html

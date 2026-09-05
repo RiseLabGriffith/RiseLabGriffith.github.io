@@ -1,0 +1,42 @@
+{%- comment -%}
+Interactive four-layer framework stack with the lifecycle rail beneath.
+Usage: {% include framework-stack.html mode="compact" %} (home) or mode="full" (research page).
+Without JavaScript every band is expanded; site.js collapses them and adds click/keyboard toggling.
+{%- endcomment -%}
+{%- assign mode = include.mode | default: "compact" -%}
+{%- assign heading = "h2" -%}{%- if mode == "compact" -%}{%- assign heading = "h3" -%}{%- endif -%}
+<div class="stack stack--{{ mode }}" data-stack>
+  <div class="stack__layers">
+  {%- for layer in site.data.research.layers -%}
+  {%- assign L = layer.id -%}
+  <section class="stack__layer stack__layer--{{ L }}">
+    <{{ heading }} class="stack__title">
+      <button class="stack__head" type="button" id="stack-head-{{ L }}" aria-expanded="false" aria-controls="stack-{{ L }}">
+        <span class="stack__letter" aria-hidden="true">{{ layer.letter }}</span>
+        <span class="stack__text">
+          <span class="stack__name">{{ layer.name }}</span>
+          <span class="stack__tagline">{{ layer.tagline }}</span>
+        </span>
+        <span class="stack__chevron" aria-hidden="true"></span>
+      </button>
+    </{{ heading }}>
+    <div class="stack__body" id="stack-{{ L }}" role="region" aria-labelledby="stack-head-{{ L }}">
+      <p class="stack__desc">{{ layer.description }}</p>
+      <ul class="stack__keywords" aria-label="Keywords">
+        {%- for k in layer.keywords -%}<li class="tag tag--{{ L }}">{{ k }}</li>{%- endfor -%}
+      </ul>
+      <ul class="stack__topics">
+        {%- for topic in layer.topics -%}
+        <li><a href="{{ '/research/#' | append: topic.id | relative_url }}">{{ topic.name }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+  {%- endfor -%}
+  </div>
+  <ol class="lifecycle" aria-label="Cybersecurity lifecycle">
+    {%- for stage in site.data.research.lifecycle -%}
+    <li class="lifecycle__stage"><span class="lifecycle__dot" aria-hidden="true"></span><span class="lifecycle__label">{{ stage }}</span></li>
+    {%- endfor -%}
+  </ol>
+</div>

@@ -1,0 +1,4 @@
+{%- comment -%} Small coloured tag for a layer letter. {% include layer-tag.html letter="R" %} or letter="R" label=true {%- endcomment -%}
+{%- assign letter = include.letter -%}
+{%- assign layer = site.data.research.layers | where: "id", letter | first -%}
+<a class="tag tag--{{ letter }}" href="{{ '/research/#layer-' | append: letter | relative_url }}" title="{{ layer.name }}">{{ letter }}{% if include.label %} · {{ layer.short }}{% endif %}</a>
