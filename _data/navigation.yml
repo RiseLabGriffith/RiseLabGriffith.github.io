@@ -1,13 +1,15 @@
-- title: Home
-  url: /
+# Primary navigation, in display order.
 - title: Research
   url: /research/
 - title: People
   url: /people/
-- title: Projects
-  url: /projects/
 - title: Publications
   url: /publications/
+- title: Projects
+  url: /projects/
+- title: News
+  url: /news/
+- title: About
+  url: /about/
 - title: Join Us
   url: /join/
-

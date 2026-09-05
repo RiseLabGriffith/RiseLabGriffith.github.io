@@ -1,12 +1,27 @@
 <header class="site-header">
-  <nav class="nav-wrap" aria-label="Primary navigation">
-    <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-mark">RISE</span><span>RISE Lab</span></a>
-    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Open navigation menu"><span></span></button>
-    <ul class="nav-links" id="main-menu">
-      {% for item in site.data.navigation %}
-      <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
+  <div class="container nav-wrap">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.data.site.name }} home">
+      {% include brand-mark.html %}
+      <span class="brand__text"><span class="brand__name">RISE Lab</span><span class="brand__sub">Griffith University</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="nav-links" id="site-nav">
+        {%- for item in site.data.navigation -%}
+        {%- assign active = false -%}
+        {%- if page.url == item.url -%}{%- assign active = true -%}
+        {%- elsif item.url != "/" and page.url contains item.url -%}{%- assign active = true -%}{%- endif -%}
+        <li><a href="{{ item.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle colour theme" title="Toggle colour theme">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </div>
 </header>
-

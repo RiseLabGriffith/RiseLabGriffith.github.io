@@ -1,0 +1,18 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+<section class="notfound">
+  <div class="container">
+    <p class="eyebrow">404</p>
+    <h1>Page not found</h1>
+    <p class="lede">The page you were looking for has moved or never existed. Try one of these instead.</p>
+    <ul class="notfound__links">
+      {%- for item in site.data.navigation -%}
+      <li><a class="button button--ghost" href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>

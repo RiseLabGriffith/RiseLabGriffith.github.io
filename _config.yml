@@ -1,17 +1,42 @@
+# Build settings for the RISE Lab website. Content lives in _data/, _projects/ and the page files.
 title: RISE Lab
 tagline: Responsible, Intelligent and Secure Engineering
-description: Cybersecurity research initiative at Griffith University
+description: RISE Lab is a researcher-led cybersecurity lab at Griffith University connecting cyber defence, applied cryptography, privacy-preserving technologies and secure software engineering.
 url: "https://riselabgriffith.github.io"
-baseurl: "/RiseLabGriffith"
+baseurl: ""
+lang: en
+timezone: Australia/Brisbane
 markdown: kramdown
 permalink: pretty
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+sass:
+  style: compressed
+  sass_dir: _sass
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
 defaults:
   - scope:
       path: ""
     values:
-      layout: default
+      layout: page
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
 exclude:
   - README.md
-  - RISE Lab Proposal-v2.docx
+  - Gemfile
+  - Gemfile.lock
   - vendor
-
+  - docs
+  - scripts
+  - tests
+  - .idea
+  - "*.docx"
+  - node_modules
+  - _projects/_template.md
