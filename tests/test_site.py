@@ -71,3 +71,11 @@ def test_news_page_timeline_and_events(built_site):
     assert html.count('class="news-item') >= 12
     assert "Upcoming" in html and 'class="timeline__year"' in html
     assert 'class="event' in html
+
+
+def test_home_sections(built_site):
+    html = built_site("/")
+    for marker in ['class="hero"', "data-stack", 'class="stats"', "Latest news", "Selected publications", "Featured projects", "/join/"]:
+        assert marker in html, marker
+    assert html.count('class="pub ') <= 6
+    assert html.count('data-letter=') == 4

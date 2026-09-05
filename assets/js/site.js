@@ -266,5 +266,32 @@
     });
   });
 
+  // ---- Stats counters -----------------------------------------------------
+  var counters = $$('[data-count]');
+  if (counters.length && !reducedMotion && 'IntersectionObserver' in window) {
+    var countUp = function (el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      if (isNaN(target)) { return; }
+      var start = null;
+      var duration = 900;
+      var step = function (ts) {
+        if (start === null) { start = ts; }
+        var t = Math.min(1, (ts - start) / duration);
+        var eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = String(Math.round(target * eased));
+        if (t < 1) { requestAnimationFrame(step); }
+      };
+      requestAnimationFrame(step);
+    };
+    var seen = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) { return; }
+        seen.unobserve(en.target);
+        countUp(en.target);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { el.textContent = '0'; seen.observe(el); });
+  }
+
   window.RISE = { $: $, $$: $$, reducedMotion: reducedMotion };
 })();
