@@ -11,7 +11,12 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   {% include header.html %}
-  <main id="main-content">{{ content }}</main>
+  <main id="main-content">
+    {% if page.headline %}
+    <section class="page-banner"><div class="page-banner-inner"><p class="eyebrow">{{ page.title }}</p><h1>{{ page.headline }}</h1><p>{{ page.intro }}</p></div></section>
+    <article class="page-content">{{ content }}</article>
+    {% else %}{{ content }}{% endif %}
+  </main>
   {% include footer.html %}
   <script>
     const button=document.querySelector('.menu-button'),menu=document.querySelector('.nav-links');
@@ -19,4 +24,3 @@
   </script>
 </body>
 </html>
-
