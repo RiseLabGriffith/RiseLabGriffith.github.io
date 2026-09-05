@@ -142,3 +142,35 @@
   .pub__links { justify-content: flex-start; }
   .pub-toolbar__count { margin-left: 0; width: 100%; }
 }
+
+// Projects ------------------------------------------------------------------
+.project-group { margin-bottom: clamp(40px, 6vw, 64px); scroll-margin-top: 84px; }
+.project-group__title { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+.project {
+  display: flex; flex-direction: column; gap: 8px;
+  .project__kind { margin: 0; }
+  .project__title { font-size: 1.15rem; line-height: 1.3; margin: 0; a { text-decoration-color: transparent; &:hover { text-decoration-color: currentColor; } } }
+  .project__summary { color: var(--muted); font-size: 0.93rem; margin: 0; }
+  .project__funding { margin: 0; color: var(--navy); }
+  .project__foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 12px; margin-top: auto; padding-top: 10px; }
+  .project__people { margin: 0; }
+}
+.status { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 1px 7px; border-radius: 4px; background: var(--cloud); color: var(--muted); }
+.status--active { background: var(--layer-I-soft); color: var(--layer-I); }
+.status--proposed { background: var(--layer-R-soft); color: var(--layer-R); }
+.status--completed { background: var(--cloud); color: var(--muted); }
+.banner__tags { margin-top: 20px; }
+.banner .eyebrow a { color: inherit; text-decoration: none; &:hover { text-decoration: underline; } }
+.project-layout { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: start; }
+@media (min-width: 900px) { .project-layout { grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; } .project-aside { position: sticky; top: 92px; } }
+.project-body { max-width: 72ch; }
+.facts-card { padding: 20px 22px; }
+.facts {
+  margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 10px 16px; align-items: baseline;
+  dt { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  dd { margin: 0; font-size: 0.93rem; }
+}
+.facts__list { list-style: none; margin: 0; padding: 0; li { line-height: 1.5; } }
+.related__title { margin-bottom: 16px; }
+.related__more { margin-top: 16px; font-size: 0.9rem; }
+.pub-list--compact .pub { padding-left: 14px; }

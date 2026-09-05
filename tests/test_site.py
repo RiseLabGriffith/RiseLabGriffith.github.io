@@ -54,3 +54,13 @@ def test_publications_page_has_entries_and_tools(built_site):
     assert "data-pub-search" in html and "data-bibtex" in html and "data-pub-count" in html
     assert "<strong>Leo Zhang</strong>" in html or "<strong>Leo Yu Zhang</strong>" in html
     assert 'id="y2026"' in html
+
+
+def test_projects_index_and_detail(built_site):
+    html = built_site("/projects/")
+    assert html.count('class="project card') >= 8
+    for heading in ["Research directions", "Funded projects", "Software"]:
+        assert heading in html, heading
+    detail = built_site("/projects/secure-auditable-ai-agents/")
+    assert "Status" in detail and 'class="tag tag--I"' in detail
+    assert 'class="facts"' in detail
