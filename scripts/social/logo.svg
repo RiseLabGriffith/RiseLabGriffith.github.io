@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 32 32">
+  <!-- Square logo (512x512), the brand mark from _includes/brand-mark.html. Rendered to assets/img/logo.png. -->
+  <rect width="32" height="32" rx="7" fill="#0b1f3a"/>
+  <rect x="7" y="7" width="18" height="3" rx="1.5" fill="#7b9bea"/>
+  <rect x="7" y="13" width="18" height="3" rx="1.5" fill="#3fbf97"/>
+  <rect x="7" y="19" width="18" height="3" rx="1.5" fill="#f0707a"/>
+  <rect x="7" y="25" width="18" height="3" rx="1.5" fill="#e09a5c"/>
+</svg>

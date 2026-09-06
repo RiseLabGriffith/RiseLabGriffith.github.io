@@ -3,6 +3,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('rise-theme');if(t){d.setAttribute('data-theme',t);}}catch(e){}})();</script>
   {% seo %}
+  {%- if page.sitemap == false %}<meta name="robots" content="noindex">{% endif %}
+  {%- comment -%} Dimensions and alt text of the preview image set in _config.yml (rendered by scripts/make_social_images.sh). {%- endcomment %}
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="RISE Lab, Griffith University: Responsible, Intelligent and Secure Engineering">
+  <meta name="twitter:image:alt" content="RISE Lab, Griffith University: Responsible, Intelligent and Secure Engineering">
+  {% include structured-data.html %}
   <meta name="theme-color" content="#0b1f3a">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">

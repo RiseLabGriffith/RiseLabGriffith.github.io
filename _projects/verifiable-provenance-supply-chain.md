@@ -1,5 +1,6 @@
 ---
 title: Verifiable Provenance for Software, Data and AI Supply Chains
+date: 2026-09-06
 summary: Cryptographic provenance, watermarking and continuous analysis that show where software, data and AI models came from, whether they were tampered with, and whether they can be trusted.
 kind: direction
 status: active

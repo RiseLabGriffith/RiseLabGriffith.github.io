@@ -1,5 +1,6 @@
 ---
 title: Privacy-Preserving Cyber-Threat Intelligence Sharing
+date: 2026-09-06
 summary: Letting organisations pool indicators, incidents and attack analytics without exposing the sensitive data behind them, using secure computation, differential privacy and cryptographic access control.
 kind: direction
 status: proposed

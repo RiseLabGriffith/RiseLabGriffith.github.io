@@ -6,11 +6,19 @@ url: "https://riselabgriffith.github.io"
 baseurl: ""
 lang: en
 timezone: Australia/Brisbane
+# Square logo used in structured data. The preview image for link shares is set under `defaults` below.
+# Both are rendered by scripts/make_social_images.sh (see README, "Search engines and link previews").
+logo: /assets/img/logo.png
+# Ownership tokens from Google Search Console and Bing Webmaster Tools; uncomment and paste to verify the site.
+# webmaster_verifications:
+#   google: ""
+#   bing: ""
 markdown: kramdown
 permalink: pretty
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-last-modified-at
 sass:
   style: compressed
   sass_dir: _sass
@@ -23,11 +31,18 @@ defaults:
       path: ""
     values:
       layout: page
+      image: /assets/img/og-image.png
   - scope:
       path: ""
       type: projects
     values:
       layout: project
+      seo:
+        type: WebPage
+  - scope:
+      path: "assets"
+    values:
+      sitemap: false
 exclude:
   - README.md
   - Gemfile

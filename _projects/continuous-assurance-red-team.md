@@ -1,5 +1,6 @@
 ---
 title: Continuous Assurance and Red-Team Pipelines
+date: 2026-09-06
 summary: Reusable benchmarks, automated penetration testing, fuzzing and adversarial evaluation that measure whether software, networks and AI systems stay secure as they change.
 kind: direction
 status: active

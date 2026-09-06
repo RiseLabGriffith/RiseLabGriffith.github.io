@@ -1,5 +1,6 @@
 ---
 title: Secure and Auditable AI Agents
+date: 2026-09-06
 summary: Finding, measuring and containing the security risks of LLM agents and their skill and tool ecosystems, so that agents acting on behalf of people and organisations can be trusted and audited.
 kind: direction
 status: active

@@ -1,6 +1,7 @@
 ---
 # Copy this file to _projects/<slug>.md (the slug becomes the URL /projects/<slug>/). This template is not built.
 title: Project title
+date: 2026-01-01       # date the page was first published; keep it fixed (search engines read it)
 summary: One or two sentences shown on the card and under the page heading.
 kind: direction          # direction | funded | software
 status: active           # active | proposed | completed
