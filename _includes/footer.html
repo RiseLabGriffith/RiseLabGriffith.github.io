@@ -1,5 +1,29 @@
-<footer class="site-footer"><div class="footer-inner">
-  <p><strong>RISE Lab</strong> · {{ site.tagline }}</p>
-  <p>Griffith University · &copy; {{ site.time | date: "%Y" }}</p>
-</div></footer>
-
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-col--brand">
+      <a class="brand brand--footer" href="{{ '/' | relative_url }}">{% include brand-mark.html %}<span class="brand__text"><span class="brand__name">RISE Lab</span><span class="brand__sub">{{ site.data.site.tagline }}</span></span></a>
+      <p>{{ site.data.site.school }}<br>{{ site.data.site.university }}</p>
+      <p class="footer-address">{{ site.data.site.address_gc }}<br>{{ site.data.site.address_nathan }}</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Explore</p>
+      <ul class="footer-links">
+        {%- for item in site.data.navigation -%}
+        <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Connect</p>
+      <ul class="footer-links">
+        <li><a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a></li>
+        <li><a href="{{ site.data.site.github }}" rel="noopener">GitHub</a></li>
+        <li><a href="{{ site.data.site.school_url }}" rel="noopener">School of ICT</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="footer-ack">{{ site.data.site.acknowledgement }}</p>
+    <p class="footer-meta">© {{ site.time | date: "%Y" }} RISE Lab · Griffith University · Last updated {{ site.time | date: "%-d %B %Y" }}</p>
+  </div>
+</footer>

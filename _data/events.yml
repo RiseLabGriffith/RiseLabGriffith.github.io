@@ -1,0 +1,19 @@
+# Seminars, reading groups, workshops and visits. Any order; the page splits upcoming and past by the build date.
+# Fields: date (YYYY-MM-DD), time (optional text), kind (seminar | reading-group | workshop | visit | talk | other),
+# title, speaker, affiliation, location, abstract, link (all optional), tentative (true when details are not confirmed).
+- date: 2026-10-15
+  time: "15:00–16:00 AEST"
+  kind: seminar
+  title: "RISE seminar series: inaugural session"
+  speaker: RISE members
+  affiliation: Griffith University
+  location: Gold Coast campus and online
+  abstract: A monthly seminar series with talks by lab members and invited speakers across the four RISE layers. The inaugural session introduces the lab's research directions and demonstrators. Speaker and room will be confirmed closer to the date.
+  tentative: true
+- date: 2026-10-01
+  time: "Fortnightly, 14:00 AEST"
+  kind: reading-group
+  title: Trustworthy AI and agent security reading group
+  location: Online
+  abstract: A fortnightly reading group on LLM and agent security, robustness, privacy and applied cryptography, open to Griffith HDR students and visiting researchers. Email the lab to receive the paper list.
+  tentative: true

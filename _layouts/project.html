@@ -1,0 +1,73 @@
+---
+layout: default
+---
+{%- assign primary = page.layers | first -%}
+{%- case page.kind -%}
+  {%- when "funded" -%}{%- assign kind_label = "Funded project" -%}
+  {%- when "software" -%}{%- assign kind_label = "Software and artefacts" -%}
+  {%- else -%}{%- assign kind_label = "Research direction" -%}
+{%- endcase -%}
+<section class="banner banner--project">
+  <div class="container">
+    <p class="eyebrow"><a href="{{ '/projects/' | relative_url }}">Projects</a> · {{ kind_label }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="lede">{{ page.summary }}</p>
+    <div class="tag-row banner__tags" aria-label="Framework layers">{% for L in page.layers %}{% include layer-tag.html letter=L label=true %}{% endfor %}</div>
+  </div>
+</section>
+<div class="container project-layout">
+  <article class="prose project-body">
+    {{ content }}
+  </article>
+  <aside class="project-aside">
+    <div class="card card--flat rail-{{ primary }} facts-card">
+      <dl class="facts">
+        <dt>Status</dt><dd><span class="status status--{{ page.status }}">{{ page.status | capitalize }}</span></dd>
+        <dt>Layers</dt><dd><div class="tag-row">{% for L in page.layers %}{% include layer-tag.html letter=L %}{% endfor %}</div></dd>
+        {%- if page.lead %}<dt>Lead</dt><dd>{{ page.lead }}</dd>{% endif -%}
+        {%- if page.members -%}
+        <dt>People</dt><dd><ul class="facts__list">
+          {%- for mid in page.members -%}
+          {%- assign person = site.data.people | where: "id", mid | first -%}
+          {%- if person %}<li><a href="{{ '/people/#' | append: person.id | relative_url }}">{{ person.name }}</a></li>{% endif -%}
+          {%- endfor -%}
+        </ul></dd>
+        {%- endif -%}
+        {%- if page.funder %}<dt>Funder</dt><dd>{{ page.funder }}</dd>{% endif -%}
+        {%- if page.funding %}<dt>Funding</dt><dd>{{ page.funding }}</dd>{% endif -%}
+        {%- if page.years %}<dt>Years</dt><dd>{{ page.years }}</dd>{% endif -%}
+        {%- if page.partners %}<dt>Partners</dt><dd>{{ page.partners | join: ", " }}</dd>{% endif -%}
+        {%- if page.links -%}
+        <dt>Links</dt><dd><ul class="icon-links">
+          {%- for link in page.links %}<li><a href="{{ link[1] }}" rel="noopener">{{ link[0] | replace: "_", " " | capitalize }}</a></li>{% endfor -%}
+        </ul></dd>
+        {%- endif -%}
+      </dl>
+    </div>
+  </aside>
+</div>
+{%- comment -%} Related publications: by topic when given, otherwise by member. {%- endcomment -%}
+{%- assign related = "" | split: "" -%}
+{%- if page.topics -%}
+  {%- for t in page.topics -%}
+    {%- assign hits = site.data.publications | where_exp: "pub", "pub.topics contains t" -%}
+    {%- assign related = related | concat: hits -%}
+  {%- endfor -%}
+{%- elsif page.members -%}
+  {%- for m in page.members -%}
+    {%- assign hits = site.data.publications | where_exp: "pub", "pub.members contains m" | where: "selected", true -%}
+    {%- assign related = related | concat: hits -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- assign related = related | uniq | sort: "year" | reverse -%}
+{%- if related.size > 0 -%}
+<section class="section--tight">
+  <div class="container">
+    <h2 class="related__title">Related publications</h2>
+    <div class="pub-list pub-list--compact">
+      {%- for pub in related limit: 6 -%}{% include pub-item.html pub=pub %}{%- endfor -%}
+    </div>
+    <p class="related__more"><a href="{{ '/publications/' | append: '?' | append: page.pub_query | default: '/publications/' | relative_url }}">Browse all publications</a></p>
+  </div>
+</section>
+{%- endif -%}

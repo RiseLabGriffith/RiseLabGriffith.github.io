@@ -1,0 +1,5 @@
+{%- comment -%} One number in the stats strip. Usage: {% include stat.html value=14 label="Research topics" href="/research/" %} {%- endcomment -%}
+<div class="stat">
+  <span class="stat__value" data-count="{{ include.value }}">{{ include.value }}</span>
+  {%- if include.href -%}<a class="stat__label" href="{{ include.href | relative_url }}">{{ include.label }}</a>{%- else -%}<span class="stat__label">{{ include.label }}</span>{%- endif -%}
+</div>

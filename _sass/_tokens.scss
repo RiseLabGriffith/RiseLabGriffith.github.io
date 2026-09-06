@@ -1,0 +1,81 @@
+// Design tokens. Light theme on :root; dark theme overrides below.
+:root {
+  --paper: #faf9f6;
+  --surface: #ffffff;
+  --cloud: #eff1f4;
+  --ink: #101828;
+  --muted: #5b6472;
+  --line: #e3e6ea;
+  --line-strong: #c9cfd6;
+  --navy: #0b1f3a;
+  --navy-2: #132b4d;
+  --on-navy: #ffffff;
+  --on-navy-muted: rgba(255, 255, 255, 0.72);
+  --red: #c8102e;
+  --red-hover: #a80d27;
+  --red-soft: #fbe9ec;
+  --link: #0b1f3a;
+
+  --layer-R: #2a4d9b;
+  --layer-I: #0e7c5b;
+  --layer-S: #b8232f;
+  --layer-E: #a0561b;
+  --layer-R-soft: #e9eef9;
+  --layer-I-soft: #e4f3ed;
+  --layer-S-soft: #f9e8ea;
+  --layer-E-soft: #f6ede3;
+
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --max: 1160px;
+  --gutter: 24px;
+  --radius: 8px;
+  --radius-sm: 5px;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 10px 28px rgba(16, 24, 40, 0.06);
+  --shadow-hover: 0 2px 4px rgba(16, 24, 40, 0.05), 0 14px 36px rgba(16, 24, 40, 0.1);
+  --grid-dot: rgba(11, 31, 58, 0.12);
+  --brand-bg: #0b1f3a;
+
+  color-scheme: light;
+}
+
+@mixin dark-tokens {
+  --paper: #0e141c;
+  --surface: #141c26;
+  --cloud: #1a2431;
+  --ink: #e8ecf1;
+  --muted: #98a2b3;
+  --line: #26303d;
+  --line-strong: #37424f;
+  --navy: #0a1522;
+  --navy-2: #0f1c2c;
+  --on-navy: #f2f5f8;
+  --on-navy-muted: rgba(242, 245, 248, 0.7);
+  --red: #ff5c6c;
+  --red-hover: #ff7a87;
+  --red-soft: #3a1a20;
+  --link: #dfe6ef;
+
+  --layer-R: #7b9bea;
+  --layer-I: #3fbf97;
+  --layer-S: #f0707a;
+  --layer-E: #e09a5c;
+  --layer-R-soft: rgba(123, 155, 234, 0.14);
+  --layer-I-soft: rgba(63, 191, 151, 0.14);
+  --layer-S-soft: rgba(240, 112, 122, 0.14);
+  --layer-E-soft: rgba(224, 154, 92, 0.14);
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 28px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.35), 0 14px 36px rgba(0, 0, 0, 0.45);
+  --grid-dot: rgba(232, 236, 241, 0.1);
+  --brand-bg: #1a2a44;
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include dark-tokens; }
+}
+:root[data-theme="dark"] { @include dark-tokens; }

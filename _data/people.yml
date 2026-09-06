@@ -1,0 +1,341 @@
+# Lab members. `id` is the join key used by publications, projects, news and openings.
+#
+# Fields: id (slug), name, aliases (other spellings used in author lists), title, role, position, photo (file in
+# assets/img/people/), email, links {homepage, scholar, griffith, orcid, github, linkedin, dblp}, interests, layers,
+# bio, note (small label such as "Incoming 2026"), supervisors (ids), affiliation (visitors/joint), since (year), dblp (PID).
+# role: director | academic | student | visitor | joint | alumni
+
+# ---- Director ---------------------------------------------------------------
+- id: leo-zhang
+  name: Leo Zhang
+  aliases: [Leo Yu Zhang]
+  title: A/Prof
+  role: director
+  position: Associate Professor · Lab Director
+  photo: leo-zhang.jpg
+  email: leo.zhang@griffith.edu.au
+  links:
+    homepage: https://leozhangcs.github.io/
+    scholar: https://scholar.google.com/citations?user=JK21OM0AAAAJ
+    griffith: https://experts.griffith.edu.au/41503-leo-zhang
+    orcid: https://orcid.org/0000-0001-9330-2662
+    linkedin: https://www.linkedin.com/in/leo-yu-zhang-9420997b/
+  dblp: 117/3526
+  interests: [Trustworthy AI, Applied cryptography, Adversarial and poisoning attacks, Privacy-preserving computation, Authentication]
+  layers: [R, I, S]
+  bio: >
+    Leo Zhang is an Associate Professor in the School of ICT at Griffith University and was previously with Deakin
+    University. He received his PhD in Electrical Engineering from the City University of Hong Kong. His research
+    focuses on trustworthy AI (adversarial, backdoor, poisoning, privacy, jailbreak and injection attacks and
+    defences) and applied cryptography (privacy-preserving computation and authentication in emerging settings),
+    with publications in IEEE TIFS, IEEE TDSC, IEEE S&P, USENIX Security, NDSS, ICLR, ICML, NeurIPS, CVPR and AAAI.
+    He received the 2021 AISA Researcher of the Year award and serves as Associate Editor for IEEE TDSC, TMM and TCYB.
+
+# ---- Academic members -------------------------------------------------------
+- id: yanjun-zhang
+  name: Yanjun Zhang
+  title: Dr
+  role: academic
+  position: Senior Lecturer
+  photo: yanjun-zhang.jpg
+  email: yanjun.zhang@griffith.edu.au
+  links:
+    griffith: https://experts.griffith.edu.au/56029-yanjun-zhang
+    orcid: https://orcid.org/0000-0001-5611-3483
+  dblp: 24/6547-2
+  interests: [Trustworthy AI, Privacy-preserving computation, Adversarial and backdoor attacks, Federated learning]
+  layers: [I, S]
+  bio: >
+    Yanjun Zhang is a Senior Lecturer in the School of ICT at Griffith University. She was previously with the
+    University of Technology Sydney and Deakin University, and received her PhD in Computer Science from the
+    University of Queensland in 2021. Her research centres on trustworthy AI, including adversarial, backdoor,
+    poisoning and privacy attacks and defences, and privacy-preserving computation, with publications in IEEE
+    TIFS, IEEE TDSC, IEEE S&P, NDSS, ICML, CVPR and AAAI.
+
+- id: qinyi-li
+  name: Qinyi Li
+  title: Dr
+  role: academic
+  position: Lecturer
+  photo: qinyi-li.jpg
+  email: qinyi.li@griffith.edu.au
+  links:
+    griffith: https://experts.griffith.edu.au/9201-qinyi-li
+    orcid: https://orcid.org/0000-0002-1064-2600
+  dblp: 117/8987
+  interests: [Cryptography, Lattice-based cryptography, Secure protocols, Network security]
+  layers: [S]
+  bio: >
+    Qinyi Li has been a Lecturer in the School of ICT at Griffith University since 2019, following a postdoctoral
+    fellowship at Queensland University of Technology, where he also completed his PhD in 2017. His research focuses
+    on cryptography and security, with work published at major cryptography venues including CRYPTO and ASIACRYPT.
+    He coordinates Griffith's courses in cryptography, network security and cyber security management and is a
+    member of the International Association for Cryptologic Research.
+
+- id: he-zhang
+  name: He Zhang
+  title: Dr
+  role: academic
+  position: Lecturer
+  photo: he-zhang.jpg
+  email: h.zhang@griffith.edu.au
+  note: Joined 2026
+  links:
+    homepage: https://sites.google.com/view/hezhang
+    scholar: https://scholar.google.com/citations?user=ry0HxBQAAAAJ
+    griffith: https://experts.griffith.edu.au/55520-he-zhang
+    orcid: https://orcid.org/0000-0002-5796-7891
+  dblp: 24/2058-12
+  interests: [Security for AI, Trustworthy graph learning, Machine unlearning, LLM watermarking, Fairness and privacy]
+  layers: [R, I, S]
+  bio: >
+    He Zhang is a Lecturer in the School of ICT at Griffith University, which he joined in February 2026 from RMIT
+    University. He obtained his PhD from Monash University. His research spans security for AI and trustworthy AI
+    systems: privacy-preserving technologies for AI security, individual trustworthiness aspects such as robustness,
+    explainability, privacy and fairness, and the interplay among them. His work appears in ICML, NDSS, WWW, AAAI,
+    KDD, ICDE, Proceedings of the IEEE and IEEE TKDE.
+
+- id: yi-liu
+  name: Yi Liu
+  title: Dr
+  role: academic
+  position: Lecturer
+  photo: yi-liu.jpg
+  email: yi.liu@griffith.edu.au
+  note: Incoming 2026
+  links:
+    homepage: https://liuyi-academic.github.io/
+    scholar: https://scholar.google.com/citations?user=DcFodKsAAAAJ
+    github: https://github.com/GreyDGL/PentestGPT
+  dblp: 97/4626-69
+  interests: [LLM security, AI agent security, Software engineering and testing, Automated penetration testing]
+  layers: [I, E]
+  bio: >
+    Yi Liu is an incoming Lecturer in the School of ICT at Griffith University. He received his PhD from Nanyang
+    Technological University, Singapore, and was most recently an AI Research Engineer at Quantstamp building an AI
+    firewall. His research on LLM security, AI agent security and software testing has appeared at IEEE S&P, ACM
+    CCS, USENIX Security, NDSS, ICSE, FSE, ACL, OOPSLA and ASE, and has been cited by the OWASP LLM Top 10, NIST,
+    Google DeepMind and OpenAI. He is a core contributor to PentestGPT and has disclosed vulnerabilities in major
+    AI coding agents.
+
+- id: wei-song
+  name: Wei Song
+  title: Dr
+  role: academic
+  position: Lecturer
+  photo: wei-song.jpg
+  email: w.song@griffith.edu.au
+  note: Incoming 2026
+  links:
+    homepage: https://wweisong.github.io/
+    scholar: https://scholar.google.com.au/citations?user=HrA4BoYAAAAJ
+    linkedin: https://www.linkedin.com/in/wei-song-8956a9b3/
+  dblp: 62/1539-5
+  interests: [Adversarial machine learning, AI watermarking, AI security for energy systems, Video LLM safety]
+  layers: [I, E]
+  bio: >
+    Wei Song is an incoming Lecturer in the School of ICT at Griffith University. He completed his PhD at UNSW
+    Sydney in 2024 and continued there as a Postdoctoral Research Fellow. His research focuses on AI security,
+    particularly adversarial machine learning, AI watermarking and AI security for energy systems, with work at
+    USENIX Security, RAID, AAAI, ASE, EMNLP and ACM IMWUT. He leads AUD 3.9M of funded work on secure AI for
+    distributed energy assets and co-founded the spinout SunstackAI.
+
+# ---- PhD students at Griffith ----------------------------------------------
+- id: zhihao-chen
+  name: Zhihao Chen
+  role: student
+  position: PhD student
+  note: Incoming 2026
+  supervisors: [yi-liu, leo-zhang]
+  since: 2026
+  layers: [I, E]
+- id: jingming-dai
+  name: Jingming Dai
+  role: student
+  position: PhD student
+  supervisors: [leo-zhang]
+  since: 2026
+  layers: [R, I]
+- id: jintian-ji
+  name: Jintian Ji
+  role: student
+  position: PhD student
+  supervisors: [leo-zhang]
+  since: 2026
+  layers: [R, I]
+- id: ziwen-tan
+  name: Ziwen Tan
+  role: student
+  position: PhD student
+  supervisors: [leo-zhang]
+  since: 2026
+  layers: [R, I]
+- id: fang-long
+  name: Fang Long
+  role: student
+  position: PhD student
+  supervisors: [leo-zhang]
+  since: 2025
+  layers: [R, I]
+- id: shujun-wang
+  name: Shujun Wang
+  role: student
+  position: PhD student
+  supervisors: [leo-zhang, qinyi-li]
+  since: 2025
+  layers: [S]
+- id: haoqi-zhang
+  name: Haoqi Zhang
+  role: student
+  position: PhD student
+  supervisors: [leo-zhang, qinyi-li]
+  since: 2025
+  layers: [S]
+- id: chenhong-luo
+  name: Chenhong Luo
+  role: student
+  position: PhD student
+  interests: [Private and fairness-aware deep learning]
+  supervisors: [leo-zhang]
+  since: 2024
+  layers: [R, S]
+- id: xiaomei-zhang
+  name: Xiaomei Zhang
+  role: student
+  position: PhD student
+  interests: [Security risks in large language models]
+  supervisors: [leo-zhang]
+  since: 2024
+  layers: [I]
+- id: xiaoyan-feng
+  name: Xiaoyan Feng
+  role: student
+  position: PhD student
+  interests: [Detecting LLM-generated content]
+  supervisors: [leo-zhang]
+  since: 2024
+  layers: [R, I]
+- id: zirui-gong
+  name: Zirui Gong
+  role: student
+  position: PhD student
+  interests: [Robustness, privacy and fairness trade-offs in federated learning]
+  supervisors: [leo-zhang]
+  since: 2024
+  layers: [R, S]
+- id: zhaoxi-zhang
+  name: Zhaoxi Zhang
+  role: student
+  position: PhD student
+  interests: [Detecting AI-generated content]
+  supervisors: [leo-zhang, yanjun-zhang]
+  since: 2023
+  layers: [R, I]
+- id: yujiang-li
+  name: Yujiang Li
+  role: student
+  position: PhD student
+  supervisors: [yi-liu]
+  layers: [I, E]
+- id: ruoqi-guo
+  name: Ruoqi Guo
+  role: student
+  position: PhD student
+  supervisors: [yi-liu]
+  layers: [I, E]
+
+# ---- Visiting researchers ---------------------------------------------------
+- id: taehong-kim
+  name: Taehong Kim
+  role: visitor
+  position: Visiting Professor
+  interests: [Robust and efficient federated learning at the edge]
+  supervisors: [leo-zhang]
+  since: 2025
+  layers: [R, S]
+- id: shuyu-chang
+  name: Shuyu Chang
+  role: visitor
+  position: Visiting PhD student
+  interests: [Adversarial aspects of source-code vulnerabilities in AI systems]
+  supervisors: [leo-zhang]
+  since: 2024
+  layers: [I]
+
+# ---- Jointly supervised at partner institutions -----------------------------
+- id: di-mi
+  name: Di Mi
+  role: joint
+  position: PhD student
+  affiliation: Xiangtan University
+  interests: [Model extraction attacks and defences in image-to-image translation]
+  supervisors: [leo-zhang]
+  since: 2024
+  layers: [R]
+- id: yuhang-zhou
+  name: Yuhang Zhou
+  role: joint
+  position: PhD student
+  affiliation: Harbin Institute of Technology, Shenzhen
+  interests: [Adversarial robustness and generalisation in computer vision]
+  supervisors: [leo-zhang]
+  since: 2023
+  layers: [R]
+- id: jiaheng-wei
+  name: Jiaheng Wei
+  role: joint
+  position: PhD student
+  affiliation: RMIT University
+  interests: [Memorisation in deep learning and its interplay with privacy and security]
+  supervisors: [leo-zhang]
+  since: 2022
+  layers: [R, S]
+- id: lulu-xue
+  name: Lulu Xue
+  role: joint
+  position: MSc student
+  affiliation: Huazhong University of Science and Technology
+  interests: [Privacy attacks and defences in federated learning]
+  supervisors: [leo-zhang]
+  since: 2022
+  layers: [S]
+- id: yuxin-cao
+  name: Yuxin Cao
+  role: joint
+  position: PhD student
+  affiliation: National University of Singapore
+  interests: [Safety evaluation of video large language models]
+  supervisors: [wei-song]
+  layers: [I]
+- id: bangshuo-zhu
+  name: Bangshuo Zhu
+  role: joint
+  position: PhD student
+  affiliation: UNSW Sydney
+  interests: [Robust and trustworthy defences for video LLMs]
+  supervisors: [wei-song]
+  layers: [R, I]
+- id: haonan-zhong
+  name: Haonan Zhong
+  role: joint
+  position: PhD student
+  affiliation: UNSW Sydney
+  interests: [Safety alignment of large language models]
+  supervisors: [wei-song]
+  layers: [R, I]
+- id: zihao-xu
+  name: Zihao Xu
+  role: joint
+  position: PhD student
+  affiliation: UNSW Sydney
+  interests: [Jailbreak attacks and defences for LLMs]
+  supervisors: [yi-liu]
+  layers: [I]
+- id: ziqi-ding
+  name: Ziqi Ding
+  role: joint
+  position: Master's student
+  affiliation: UNSW Sydney
+  interests: [Next-generation CAPTCHA and human verification]
+  supervisors: [wei-song, yi-liu]
+  layers: [I, S]

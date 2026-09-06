@@ -1,0 +1,14 @@
+# Lab identity and contact details used across the site.
+name: RISE Lab
+full_name: Responsible, Intelligent and Secure Engineering Lab
+tagline: Responsible · Intelligent · Secure Engineering
+school: School of Information and Communication Technology
+university: Griffith University
+address_gc: Gold Coast campus, Parklands Drive, Southport QLD 4222, Australia
+address_nathan: Nathan campus, 170 Kessels Road, Nathan QLD 4111, Australia
+email: leo.zhang@griffith.edu.au
+github: https://github.com/RiseLabGriffith
+school_url: https://www.griffith.edu.au/griffith-sciences/school-information-communication-technology
+acknowledgement: >
+  We acknowledge the Traditional Custodians of the lands on which Griffith University's campuses stand,
+  and pay respect to Elders past and present.

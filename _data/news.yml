@@ -1,11 +1,122 @@
-# Add new items at the top. Use YYYY-MM-DD for the date.
-- date: 2026-09-05
-  title: RISE Lab website under development
-  text: We are building the new RISE Lab website. Research and team updates will be added progressively.
+# Lab news, newest first. Fields: date (YYYY-MM-DD, required), kind (paper | award | grant | people | event | media | general),
+# title, text, link (optional), members (optional people ids), precision (optional: "year" or "month" when the exact day is
+# not known; the timeline then shows only that much). Add new items at the top.
 - date: 2026-09-01
-  title: Research updates coming soon
-  text: News about publications, projects, seminars and collaborations will appear here.
+  kind: general
+  title: RISE Lab is established at Griffith University
+  text: The Responsible, Intelligent and Secure Engineering Lab brings together six academics in the School of ICT, spanning trustworthy AI, applied cryptography, privacy-preserving computation, LLM and agent security and secure software engineering, with a shared R/I/S/E framework and joint supervision of HDR students.
+  link: /about/
+  precision: month
 - date: 2026-08-01
-  title: Welcome to RISE Lab
-  text: RISE connects cybersecurity, applied cryptography, privacy-preserving technologies and secure software engineering.
-
+  kind: paper
+  title: "\"Help or Hurdle?\" accepted at EMNLP 2026"
+  text: Wei Song's paper rethinking Model Context Protocol-augmented large language models, with Haonan Zhong, Ziqi Ding and collaborators at UNSW Sydney and CSIRO, will appear at EMNLP 2026.
+  members: [wei-song, haonan-zhong, ziqi-ding]
+  precision: month
+- date: 2026-08-01
+  kind: people
+  title: Wei Song joins Griffith as a Lecturer
+  text: Wei Song moves from a postdoctoral fellowship at UNSW Sydney to the School of ICT, bringing expertise in adversarial machine learning, AI watermarking and AI security for energy systems, and is recruiting PhD students.
+  link: /join/
+  members: [wei-song]
+  precision: month
+- date: 2026-07-01
+  kind: paper
+  title: Three RISE papers accepted at ASE 2026
+  text: An empirical study of how LLM agent skills leak credentials (Zhihao Chen, Yi Liu, Yanjun Zhang and Leo Zhang with collaborators), RamFuzz, an LLM-guided greybox fuzzer for spatial memory corruption (Wei Song), and SAF, an agent-ready static analysis framework for LLVM IR (Wei Song and Yi Liu, tools track).
+  members: [yi-liu, wei-song, zhihao-chen, yanjun-zhang, leo-zhang]
+  precision: month
+- date: 2026-06-01
+  kind: grant
+  title: AUD 1.3M TRaCE Lab to Market project on secure federated battery management
+  text: The project "Secure Federated Battery Management System for Distributed Energy Storage Assets" is now active, with Wei Song as Lead Chief Investigator. It anchors RISE's work on resilient security for energy infrastructure.
+  link: /projects/secure-federated-bms/
+  members: [wei-song]
+  precision: month
+- date: 2026-05-01
+  kind: paper
+  title: Federated unlearning paper accepted at KDD 2026
+  text: He Zhang's "Rethinking Federated Unlearning via the Lens of Memorization" will appear at KDD 2026.
+  members: [he-zhang]
+  precision: month
+- date: 2026-04-01
+  kind: paper
+  title: Two papers at USENIX Security 2026 on agent skills and jailbreak defence
+  text: "\"Do Not Mention This to the User\" detects and characterises malicious agent skills (Yi Liu, Zhihao Chen, Yanjun Zhang, Leo Zhang and collaborators), and a second paper defends jailbreak attacks via manifold trajectory kinetics (with Yanjun Zhang, Yi Liu and Leo Zhang)."
+  members: [yi-liu, zhihao-chen, yanjun-zhang, leo-zhang]
+  precision: month
+- date: 2026-04-01
+  kind: paper
+  title: Four papers at ACL 2026 and ACL Findings
+  text: He Zhang's CIA infers the communication topology of LLM-based multi-agent systems; Yi Liu's LLM-VA resolves the jailbreak versus over-refusal trade-off; and Wei Song has two Findings papers on functionality-preserving dataset poisoning and on debiasing LLMs by masking attention heads.
+  members: [he-zhang, yi-liu, wei-song]
+  precision: month
+- date: 2026-02-01
+  kind: people
+  title: He Zhang joins Griffith as a Lecturer
+  text: He Zhang joins the School of ICT from RMIT University. His research covers security for AI and trustworthy AI systems, including privacy-preserving technologies, graph learning, machine unlearning and LLM watermarking.
+  members: [he-zhang]
+  precision: month
+- date: 2026-01-01
+  kind: paper
+  title: Papers at WWW 2026 on ranking-based federated learning and next-generation CAPTCHAs
+  text: "\"Beyond Denial-of-Service\" shows fine-grained control attacks on ranking-based federated learning (Leo Zhang, Yanjun Zhang, Zhihao Chen and Zirui Gong with collaborators), and NgCaptcha, a demo by Ziqi Ding and Wei Song, bridges past and future CAPTCHA designs."
+  members: [leo-zhang, yanjun-zhang, zhihao-chen, zirui-gong, wei-song, ziqi-ding]
+  precision: month
+- date: 2026-01-01
+  kind: paper
+  title: Two preprints measure the security of LLM agent skills at scale
+  text: "\"Agent Skills in the Wild\" studies security vulnerabilities across thousands of published agent skills, and a companion study characterises deliberately malicious skills. Both are led by Yi Liu with Leo Zhang."
+  link: https://arxiv.org/abs/2601.10338
+  members: [yi-liu, leo-zhang]
+  precision: month
+- date: 2025-11-01
+  kind: paper
+  title: Six RISE papers accepted at AAAI 2026
+  text: He Zhang's work on stealthy membership inference in unlearned graph neural networks and on test-time graph out-of-distribution detection; Wei Song's study of failures to surface harmful content in video LLMs; and three papers from Leo Zhang and Yanjun Zhang's group on machine unlearning privacy exposure, transferable backdoors for code models and adversarially robust person re-identification.
+  members: [he-zhang, wei-song, leo-zhang, yanjun-zhang]
+  precision: month
+- date: 2025-08-01
+  kind: paper
+  title: LLM watermark robustness paper accepted at NDSS 2026
+  text: "\"Character-Level Perturbations Disrupt LLM Watermarks\" by PhD students Zhaoxi Zhang and Xiaomei Zhang with Yanjun Zhang, He Zhang, Leo Zhang and collaborators shows how simple edits defeat current text watermarks."
+  members: [zhaoxi-zhang, xiaomei-zhang, yanjun-zhang, he-zhang, leo-zhang]
+  precision: month
+- date: 2025-07-01
+  kind: paper
+  title: ViDToken accepted at RAID 2025
+  text: Wei Song's video-transformer latent token defence for adversarial video detection, with collaborators at CSIRO Data61 and UNSW Sydney, will appear at RAID 2025.
+  members: [wei-song]
+  precision: month
+- date: 2025-06-01
+  kind: award
+  title: Yi Liu receives two Anthropic Safety Bug Bounty awards
+  text: The awards recognise responsibly disclosed safety issues in frontier models. Yi Liu also received the Most Innovative Paper Award at HMISA 2025.
+  members: [yi-liu]
+  precision: year
+- date: 2025-05-01
+  kind: paper
+  title: BiMark accepted at ICML 2025
+  text: >
+    He Zhang's "BiMark: Unbiased Multilayer Watermarking for Large Language Models" will appear at ICML 2025.
+  members: [he-zhang]
+  precision: month
+- date: 2025-01-01
+  kind: paper
+  title: Papers at ICLR 2025 and WWW 2025
+  text: BadRobot, from Leo Zhang's group with Lulu Xue, jailbreaks embodied LLM agents in the physical world (ICLR 2025). He Zhang's dynamic graph unlearning method and IllusionCAPTCHA by Ziqi Ding and Yi Liu appear at WWW 2025.
+  members: [leo-zhang, lulu-xue, he-zhang, ziqi-ding, yi-liu]
+  precision: month
+- date: 2024-06-01
+  kind: paper
+  title: SecVID and PentestGPT at USENIX Security 2024
+  text: Wei Song's first work on adversarial video defence and Yi Liu's evaluation of LLMs for automated penetration testing are both presented at USENIX Security 2024.
+  link: /projects/pentestgpt/
+  members: [wei-song, yi-liu]
+  precision: month
+- date: 2024-02-01
+  kind: paper
+  title: MasterKey presented at NDSS 2024
+  text: Yi Liu's MasterKey automates jailbreaks across multiple LLM chatbots and is among the works cited by the OWASP LLM Top 10 and NIST.
+  members: [yi-liu]
+  precision: month

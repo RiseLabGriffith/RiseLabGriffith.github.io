@@ -1,0 +1,187 @@
+# The RISE framework: lifecycle stages, four layers and their research topics.
+# Layer ids must stay R, I, S, E in this order. Topic ids are referenced from publications.yml (topics: [...]).
+lifecycle:
+  - Risk and Requirements
+  - Design and Build
+  - Evaluate and Red Team
+  - Deploy and Operate
+  - Monitor and Improve
+
+layers:
+  - id: R
+    letter: R
+    name: Responsible and Resilient Cybersecurity
+    short: Responsible & Resilient
+    tagline: Define responsibilities, manage cyber risks, and support prevention, recovery and adaptation.
+    keywords: [Governance, Risk controls, Resilience, Accountability, Assurance]
+    description: >
+      This layer develops the principles, methods and evidence needed to establish confidence in digital and
+      intelligent systems that operate in complex and adversarial environments. It defines security
+      responsibilities, manages cyber risks and ensures that systems can prevent, withstand, recover from and
+      adapt to cyber incidents.
+    topics:
+      - id: robustness-safety-resilience
+        name: Robustness, Safety and Resilience
+        summary: >
+          We study cyber threats, vulnerabilities, malicious inputs, operational failures and cascading risks across
+          software, cloud platforms, distributed systems, critical infrastructure and AI-enabled applications, and we
+          develop attack and defence techniques, resilient architectures, risk-aware safeguards, incident containment
+          and recovery strategies. For learning-enabled systems this includes adversarial manipulation, data and model
+          poisoning, distribution shift and unreliable behaviour.
+        keywords: [Adversarial robustness, Poisoning and backdoors, Resilient architectures, Incident containment, Recovery]
+      - id: transparency-accountability
+        name: Transparency and Accountability
+        summary: >
+          We build methods that make the security properties, decisions and operational behaviour of digital systems
+          traceable and auditable: security and data provenance, software supply-chain transparency, logging and
+          evidence collection, responsibility allocation, incident attribution and human oversight. For AI-enabled
+          systems this extends to explainability, uncertainty, model and data provenance, and accountability for
+          automated decisions and actions.
+        keywords: [Provenance, Supply-chain transparency, Auditability, Explainability, Human oversight]
+      - id: evaluation-verification-assurance
+        name: Evaluation, Verification and Continuous Assurance
+        summary: >
+          We develop benchmarks, security metrics, testing methodologies, verification techniques and assurance cases
+          for checking whether systems meet defined security, privacy, safety and resilience requirements, combining
+          empirical security testing, adversarial evaluation, formal verification and evidence-based assurance.
+          Continuous monitoring, vulnerability assessment and post-deployment evaluation keep protections effective as
+          threats, software, data and models evolve.
+        keywords: [Benchmarks, Security metrics, Formal verification, Assurance cases, Regression testing]
+
+  - id: I
+    letter: I
+    name: Intelligent Cyber Defence and Security Analytics
+    short: Intelligent Defence
+    tagline: Understand threats, find vulnerabilities and support effective cyber defence with data-driven and automated methods.
+    keywords: [Threat intelligence, Security analytics, LLM and agent security, Secure software, Automation]
+    description: >
+      This layer develops intelligent, data-driven and automated methods for understanding cyber threats, identifying
+      vulnerabilities and supporting effective cyber defence. It brings together threat intelligence, security
+      analytics, the security of emerging AI systems, and secure software engineering and testing.
+    topics:
+      - id: threat-intelligence-analytics
+        name: Threat Intelligence and Security Analytics
+        summary: >
+          We develop methods for collecting, integrating and analysing security evidence from networks, software,
+          endpoints, identities, cloud platforms and distributed systems, including threat modelling, malware and
+          attack analysis, vulnerability prioritisation, threat forecasting and security decision support.
+          Data-driven and AI-assisted techniques are adopted where they improve the speed, scale and accuracy of
+          defence, and are evaluated for reliability, adversarial robustness and operational limits.
+        keywords: [Threat modelling, Malware analysis, Vulnerability prioritisation, Decision support, AI-assisted defence]
+      - id: llm-agent-security
+        name: LLM, Foundation-Model and Agent Security
+        summary: >
+          We investigate security threats to large language models, multimodal foundation models and autonomous AI
+          agents, including jailbreaks, prompt injection, data and model poisoning, backdoors, sensitive-information
+          leakage, unsafe tool use, malicious agent skills, excessive permissions, compromised memory and cross-agent
+          attacks. We build automated vulnerability discovery and red-teaming methods, secure architectures,
+          permission models, runtime monitoring, detection and containment, with particular attention to the risks
+          created when AI systems interact with external data, software, tools and critical operational environments.
+        keywords: [Jailbreaks, Prompt injection, Agent skills, Permission control, Runtime monitoring, Red teaming]
+      - id: secure-software-engineering
+        name: Secure Software Engineering and Testing
+        summary: >
+          We advance methods for designing, analysing, testing and maintaining secure software, both conventional
+          applications and software that incorporates AI components: static and dynamic program analysis, fuzzing,
+          automated test generation, vulnerability detection, regression assurance and software supply-chain security.
+          We also examine the security of AI-generated code and AI-assisted development, from insecure dependencies
+          and credential leakage to malicious packages and unreliable code generation.
+        keywords: [Program analysis, Fuzzing, Test generation, Supply-chain security, AI-generated code]
+
+  - id: S
+    letter: S
+    name: Secure and Privacy-Preserving Foundations
+    short: Secure Foundations
+    tagline: Protect data, computation and digital interactions with practical cryptography and privacy-enhancing technologies.
+    keywords: [Applied cryptography, Differential privacy, Secure computation, Verifiability, Provenance]
+    description: >
+      This layer develops the mathematical, cryptographic and systems foundations required to protect sensitive data,
+      computation and digital interactions. It connects foundational and applied cryptography with practical
+      privacy-enhancing technologies for secure data processing, collaborative analytics and trusted digital
+      infrastructure in health, finance, government, cyber intelligence, cloud services and AI-enabled systems.
+    topics:
+      - id: privacy-preserving-data
+        name: Privacy-Preserving Data Processing
+        summary: >
+          We investigate methods that let data be collected, processed, analysed and shared while minimising the
+          disclosure of sensitive information: differential privacy, secure aggregation, federated and distributed
+          processing, privacy-preserving queries and anonymisation. We study inference, reconstruction, linkage and
+          leakage attacks, develop ways to measure and mitigate them, and balance privacy guarantees against utility,
+          efficiency, robustness and deployability.
+        keywords: [Differential privacy, Federated learning, Secure aggregation, Inference attacks, Anonymisation]
+      - id: secure-computation
+        name: Secure Computation and Collaborative Analytics
+        summary: >
+          We explore secure multi-party computation, homomorphic encryption, trusted execution environments and hybrid
+          secure-computation models that allow organisations and users to compute jointly without revealing their
+          private inputs. We study the security, efficiency and scalability of these approaches for
+          cross-organisational threat analysis, privacy-preserving health and financial analytics, secure cloud
+          computation and protected data collaboration.
+        keywords: [Multi-party computation, Homomorphic encryption, Trusted execution, Privacy-preserving ML, Collaborative analytics]
+      - id: cryptographic-protocols
+        name: Cryptographic Protocols for Intelligent Systems
+        summary: >
+          We design and analyse cryptographic protocols for confidentiality, authentication, integrity, access control,
+          key management, provenance and secure interaction among users, organisations, software services, cloud
+          platforms, connected devices, data sources and autonomous components. Topics include secure communication,
+          digital identity, software and data provenance, intellectual-property protection and the establishment of
+          trust in distributed and potentially adversarial environments.
+        keywords: [Authentication, Key management, Digital identity, Lattice-based cryptography, IP protection]
+      - id: verifiable-computation
+        name: Verifiable and Accountable Computation
+        summary: >
+          We investigate techniques that let the correctness, integrity and provenance of computations and system
+          outputs be verified without revealing protected information: zero-knowledge proofs, verifiable computation,
+          authenticated data structures, auditable protocols and cryptographic evidence for accountable operation.
+          These mechanisms support secure outsourcing, trusted data processing, supply-chain integrity, accountable
+          automated decisions and high-assurance services.
+        keywords: [Zero-knowledge proofs, Verifiable computation, Authenticated data structures, Auditable protocols, Accountability]
+
+  - id: E
+    letter: E
+    name: Engineering, Evaluation and Continuous Operations
+    short: Engineering & Operations
+    tagline: Turn principles, defences and foundations into deployable systems that stay secure after they leave the lab.
+    keywords: [Demonstrators, Toolchains, Red teaming, Monitoring, Continuous assurance]
+    description: >
+      The E layer is the integration mechanism that translates the principles, defensive capabilities and technical
+      foundations of the R, I and S layers into deployable cybersecurity outcomes. It focuses on secure engineering
+      practice, integrated toolchains, adversarial evaluation, assurance evidence and continuous security operations,
+      so that protections remain effective as software, infrastructure, data and threats evolve.
+    topics:
+      - id: cross-layer-demonstrators
+        name: Cross-Layer Demonstrators
+        summary: >
+          We build project-supported demonstrators that integrate responsible and resilient cybersecurity, intelligent
+          defence, secure foundations and operational engineering. Directions include privacy-preserving
+          threat-intelligence sharing, secure collaborative analytics across organisations, cryptographically
+          protected cloud and distributed services, verifiable software and data provenance, supply-chain monitoring,
+          resilient architectures for critical infrastructure, and secure, auditable AI agents.
+        keywords: [Threat-intelligence sharing, Collaborative analytics, Provenance, Critical infrastructure, Auditable agents]
+      - id: engineering-toolchains
+        name: Engineering Methods and Toolchains
+        summary: >
+          We create practical methods and toolchains for secure software and systems development: security by design,
+          automated code and dependency analysis, vulnerability management, secure configuration, credential
+          protection and supply-chain assurance, together with reproducible security evaluation. Where AI components
+          are involved this includes secure MLOps and LLMOps, model and data provenance, agent permission controls and
+          safeguards for AI-assisted software development.
+        keywords: [Security by design, Dependency analysis, Secure MLOps, Credential protection, Reproducible evaluation]
+      - id: evaluation-red-team
+        name: Evaluation and Red-Team Pipelines
+        summary: >
+          We build reusable security benchmarks, test harnesses, attack simulations and adversarial evaluation
+          workflows for software, networks, cloud infrastructure, privacy-preserving systems and AI-enabled
+          applications. Penetration testing, fuzzing, vulnerability scanning, program analysis, protocol testing and
+          red-team exercises assess security, privacy, robustness and resilience under realistic threat conditions and
+          feed measurable, reproducible assurance cases.
+        keywords: [Benchmarks, Penetration testing, Attack simulation, Test harnesses, Assurance evidence]
+      - id: operational-assurance
+        name: Operational Monitoring and Assurance
+        summary: >
+          We develop methods for continuous security monitoring, threat detection, configuration and dependency
+          analysis, vulnerability prioritisation, regression testing, incident investigation and post-deployment
+          assurance, combining evidence from development, deployment and operation to reveal emerging risks. For
+          AI-enabled systems this includes monitoring for data or behavioural drift, adversarial manipulation,
+          information leakage and changes in model or agent behaviour.
+        keywords: [Continuous monitoring, Drift detection, Incident investigation, Regression testing, Post-deployment assurance]
