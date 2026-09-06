@@ -2,9 +2,8 @@
 title: Publications
 permalink: /publications/
 description: Publications by RISE Lab members at Griffith University, searchable and filterable by framework layer, type and member, with BibTeX export.
-eyebrow: Publications
 headline: Papers, preprints and artefacts
-intro: Peer-reviewed papers and preprints by RISE members from 2022 onward, drawn from DBLP and members' own lists. Search, filter by framework layer, type or member, and copy a BibTeX entry for any item.
+intro: Peer-reviewed papers and preprints by RISE members since 2022. Search, filter by layer, type or member, and copy a BibTeX entry for any item.
 ---
 
 {%- assign pubs = site.data.publications -%}
@@ -57,7 +56,7 @@ intro: Peer-reviewed papers and preprints by RISE members from 2022 onward, draw
 {%- assign featured = in_year | where: "selected", true -%}
 {%- assign others = in_year | where_exp: "p", "p.selected != true" -%}
 <section class="pub-year" data-pub-year="{{ year }}">
-<h2 class="year" id="y{{ year }}">{{ year }} <span class="year__count meta" data-year-count>{{ in_year.size }}</span></h2>
+<h2 class="year" id="y{{ year }}">{{ year }}<span class="count" data-year-count>{{ in_year.size }}</span></h2>
 {%- for pub in featured -%}{% include pub-item.html pub=pub member_names=member_names %}{%- endfor -%}
 {%- for pub in others -%}{% include pub-item.html pub=pub member_names=member_names %}{%- endfor -%}
 </section>
@@ -66,4 +65,4 @@ intro: Peer-reviewed papers and preprints by RISE members from 2022 onward, draw
 
 <p class="pub-empty" data-pub-empty hidden>No publications match these filters. <button class="chip chip--link" type="button" data-pub-reset>Clear filters</button></p>
 
-<p class="pub-note">RISE members are shown in bold. This list covers 2022 onward; complete records are on each member's DBLP and Google Scholar profiles linked from the <a href="{{ '/people/' | relative_url }}">People</a> page.</p>
+<p class="pub-note">RISE members are shown in bold and selected papers carry a red mark. This list covers 2022 onward; complete records are on each member's DBLP and Google Scholar profiles, linked from the <a href="{{ '/people/' | relative_url }}">People</a> page.</p>

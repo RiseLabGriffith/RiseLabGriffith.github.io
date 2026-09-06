@@ -23,7 +23,7 @@ Without JavaScript every band is expanded; site.js collapses them and adds click
     <div class="stack__body" id="stack-{{ L }}" role="region" aria-labelledby="stack-head-{{ L }}">
       <p class="stack__desc">{{ layer.description }}</p>
       <ul class="stack__keywords" aria-label="Keywords">
-        {%- for k in layer.keywords -%}<li class="tag tag--{{ L }}">{{ k }}</li>{%- endfor -%}
+        {%- for k in layer.keywords -%}<li class="kw">{{ k }}</li>{%- endfor -%}
       </ul>
       <ul class="stack__topics">
         {%- for topic in layer.topics -%}

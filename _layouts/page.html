@@ -3,7 +3,6 @@ layout: default
 ---
 <section class="banner{% if page.banner_class %} {{ page.banner_class }}{% endif %}">
   <div class="container">
-    <p class="eyebrow">{{ page.eyebrow | default: page.title }}</p>
     <h1>{{ page.headline | default: page.title }}</h1>
     {% if page.intro %}<p class="lede">{{ page.intro }}</p>{% endif %}
   </div>

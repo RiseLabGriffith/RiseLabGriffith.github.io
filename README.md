@@ -42,7 +42,7 @@ Add an entry at the **top** of `_data/news.yml` (newest first; the validator enf
   precision: month            # optional: "month" or "year" when the exact day is not meaningful
 ```
 
-The three newest items appear on the home page.
+The five newest items appear on the home page as one-line entries, so keep titles short and self-contained. `tests/test_content.py` enforces two editorial rules: texts stay under 40 words, and the list stays balanced across members (every academic appears in at least two items, and no single member appears in more than a quarter of them).
 
 ### Add a publication
 
@@ -59,7 +59,7 @@ python3 scripts/import_publications.py --dblp-file author.xml --member leo-zhang
 python3 scripts/import_publications.py --bib new.bib --member wei-song --layers I,E --topics llm-agent-security
 ```
 
-The script prints YAML for entries not already in the data file (matched by DOI or title), with `--guess` suggesting layers and topics from the title. Review the output, adjust `layers`, `topics`, `selected` and `members`, and paste it into the file. Mark `selected: true` on papers that should appear on the home page and at the top of their year. Author names that match a member's `name` or `aliases` are shown in bold.
+The script prints YAML for entries not already in the data file (matched by DOI or title), with `--guess` suggesting layers and topics from the title. Review the output, adjust `layers`, `topics`, `selected` and `members`, and paste it into the file. Mark `selected: true` on papers that should appear at the top of their year. The home page shows six selected papers: the newest one for each academic member, then the newest remaining ones. Author names that match a member's `name` or `aliases` are shown in bold.
 
 ### Add or update a person
 
@@ -73,7 +73,7 @@ Move people to `role: alumni` rather than deleting them so that their publicatio
 
 ### Add a project
 
-Copy `_projects/_template.md` to `_projects/my-project.md` and edit the front matter (`title`, `summary`, `kind`, `status`, `layers`, `members`, optional `funder`, `funding`, `years`, `partners`, `links`, `topics`, `featured`, `order`) and the Markdown body. The page appears at `/projects/my-project/` and in the matching group on the Projects page. Set `featured: true` to show it on the home page (the first three by `order`).
+Copy `_projects/_template.md` to `_projects/my-project.md` and edit the front matter (`title`, `summary`, `kind`, `status`, `layers`, `members`, optional `funder`, `funding`, `years`, `partners`, `links`, `topics`, `featured`, `order`) and the Markdown body. The page appears at `/projects/my-project/` and in the matching group on the Projects page. Set `featured: true` to show it on the home page (the first three by `order`). Keep the featured set led by different members; `tests/test_content.py` checks that their first-listed members are distinct.
 
 ### Add an event or an opening
 
@@ -112,7 +112,7 @@ pip install pyyaml pytest
 python3 -m pytest tests -q
 ```
 
-`tests/test_data.py` checks the validator, `tests/test_import.py` the import script, `tests/test_site.py` the rendered HTML of every page and `tests/test_links.py` that every internal link and anchor resolves. Browser tests in `tests/test_e2e.py` cover the theme toggle, mobile navigation, framework stack keyboard support, filters, search, BibTeX copy and counters; they run when Playwright is installed (`pip install playwright && python -m playwright install chromium`) and are skipped otherwise.
+`tests/test_data.py` checks the validator, `tests/test_content.py` the editorial rules (copy length limits and balance across members), `tests/test_import.py` the import script, `tests/test_site.py` the rendered HTML of every page and `tests/test_links.py` that every internal link and anchor resolves. Browser tests in `tests/test_e2e.py` cover the theme toggle, mobile navigation, framework stack keyboard support, filters, search, BibTeX copy and counters; they run when Playwright is installed (`pip install playwright && python -m playwright install chromium`) and are skipped otherwise.
 
 ## Deployment
 
@@ -120,4 +120,4 @@ python3 -m pytest tests -q
 
 ## Design notes
 
-The R/I/S/E layers carry fixed colours (blue, green, red, amber) used for tags, card rails and the framework stack; they are defined once in `_sass/_tokens.scss` together with the light and dark themes. Fonts are Source Serif 4, Inter and IBM Plex Mono from Google Fonts with system fallbacks. Every page works without JavaScript; the script only adds the theme toggle, mobile menu, framework stack folding, filters, search, BibTeX copy and counters. The design specification and implementation plan are in `docs/superpowers/`.
+The site is set in two typefaces from Google Fonts with system fallbacks: Source Serif 4 for headings, the wordmark and large numerals, and Inter for everything else. There is no monospace face and no all-caps labels; small text is sentence case. Every page after the banner is built from *chapters*: a left rail holding the section name (sticky on screens wider than 1080px) and a content column, defined in `_sass/_layout.scss`. Cards are reserved for objects (projects, openings, events); people, news, publications and topics are hairline-separated lists. The four R/I/S/E layer colours are defined once in `_sass/_tokens.scss` together with the light and dark themes; they appear as the hero bands on the home page, as small squares in tags, and as the large letters on the Research page. Copy limits for intros, bios, topic summaries and news items are enforced by `tests/test_content.py`. Every page works without JavaScript; the script only adds the theme toggle, mobile menu, framework stack folding, filters, search, BibTeX copy and counters. The original design specification and implementation plan are in `docs/superpowers/`.

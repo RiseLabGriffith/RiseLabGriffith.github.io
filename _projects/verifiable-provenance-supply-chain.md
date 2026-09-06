@@ -6,6 +6,7 @@ status: active
 layers: [S, I, E]
 topics: [verifiable-computation, secure-software-engineering, transparency-accountability]
 members: [qinyi-li, yi-liu, wei-song, he-zhang]
+featured: true
 order: 4
 pub_query: topic=secure-software-engineering
 ---

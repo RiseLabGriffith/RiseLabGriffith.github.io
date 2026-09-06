@@ -7,7 +7,7 @@ layers: [I, E, R]
 topics: [llm-agent-security, engineering-toolchains]
 members: [yi-liu, leo-zhang, yanjun-zhang, wei-song, zhihao-chen]
 lead: Dr Yi Liu
-featured: true
+featured: false
 order: 1
 pub_query: topic=llm-agent-security
 ---

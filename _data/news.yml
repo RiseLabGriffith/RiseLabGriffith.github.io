@@ -1,122 +1,189 @@
 # Lab news, newest first. Fields: date (YYYY-MM-DD, required), kind (paper | award | grant | people | event | media | general),
-# title, text, link (optional), members (optional people ids), precision (optional: "year" or "month" when the exact day is
-# not known; the timeline then shows only that much). Add new items at the top.
+# title, text (one or two sentences, at most 40 words), link (optional), members (optional people ids), precision (optional:
+# "year" or "month" when the exact day is not known; the timeline then shows only that much). Add new items at the top.
+# Keep the list balanced across members: the five newest items appear on the home page.
 - date: 2026-09-01
   kind: general
   title: RISE Lab is established at Griffith University
-  text: The Responsible, Intelligent and Secure Engineering Lab brings together six academics in the School of ICT, spanning trustworthy AI, applied cryptography, privacy-preserving computation, LLM and agent security and secure software engineering, with a shared R/I/S/E framework and joint supervision of HDR students.
+  text: Six academics in the School of ICT bring cyber defence, applied cryptography, privacy-preserving computation, trustworthy AI and secure software engineering under one framework, with joint supervision of PhD students.
   link: /about/
+  members: [leo-zhang, yanjun-zhang, qinyi-li, he-zhang, yi-liu, wei-song]
+  precision: month
+- date: 2026-08-01
+  kind: people
+  title: Wei Song joins the School of ICT as a Lecturer
+  text: Wei Song arrives from a postdoctoral fellowship at UNSW Sydney, bringing adversarial machine learning, AI watermarking and AI security for energy systems. He is recruiting PhD students.
+  link: /join/
+  members: [wei-song]
   precision: month
 - date: 2026-08-01
   kind: paper
   title: "\"Help or Hurdle?\" accepted at EMNLP 2026"
-  text: Wei Song's paper rethinking Model Context Protocol-augmented large language models, with Haonan Zhong, Ziqi Ding and collaborators at UNSW Sydney and CSIRO, will appear at EMNLP 2026.
+  text: Wei Song's study of Model Context Protocol tools asks when they help and when they hinder LLM agents, with Haonan Zhong, Ziqi Ding and collaborators at UNSW Sydney and CSIRO.
   members: [wei-song, haonan-zhong, ziqi-ding]
-  precision: month
-- date: 2026-08-01
-  kind: people
-  title: Wei Song joins Griffith as a Lecturer
-  text: Wei Song moves from a postdoctoral fellowship at UNSW Sydney to the School of ICT, bringing expertise in adversarial machine learning, AI watermarking and AI security for energy systems, and is recruiting PhD students.
-  link: /join/
-  members: [wei-song]
   precision: month
 - date: 2026-07-01
   kind: paper
   title: Three RISE papers accepted at ASE 2026
-  text: An empirical study of how LLM agent skills leak credentials (Zhihao Chen, Yi Liu, Yanjun Zhang and Leo Zhang with collaborators), RamFuzz, an LLM-guided greybox fuzzer for spatial memory corruption (Wei Song), and SAF, an agent-ready static analysis framework for LLVM IR (Wei Song and Yi Liu, tools track).
-  members: [yi-liu, wei-song, zhihao-chen, yanjun-zhang, leo-zhang]
+  text: An empirical study of credential leakage through LLM agent skills (Zhihao Chen, Yi Liu, Yanjun Zhang and Leo Zhang), RamFuzz, an LLM-guided greybox fuzzer (Wei Song), and SAF, a static analysis framework for LLVM IR (Wei Song and Yi Liu).
+  members: [zhihao-chen, wei-song, yanjun-zhang, leo-zhang, yi-liu]
+  precision: month
+- date: 2026-06-01
+  kind: paper
+  title: ARES gradient inversion attack accepted at IEEE S&P 2026
+  text: PhD student Zirui Gong and Leo Zhang show a scalable, practical gradient inversion attack on federated learning that recovers private training data from shared updates.
+  members: [zirui-gong, leo-zhang]
   precision: month
 - date: 2026-06-01
   kind: grant
   title: AUD 1.3M TRaCE Lab to Market project on secure federated battery management
-  text: The project "Secure Federated Battery Management System for Distributed Energy Storage Assets" is now active, with Wei Song as Lead Chief Investigator. It anchors RISE's work on resilient security for energy infrastructure.
+  text: Wei Song is Lead Chief Investigator of the project, which builds privacy-preserving, attack-resilient federated learning for battery health across distributed energy storage assets.
   link: /projects/secure-federated-bms/
   members: [wei-song]
   precision: month
 - date: 2026-05-01
   kind: paper
   title: Federated unlearning paper accepted at KDD 2026
-  text: He Zhang's "Rethinking Federated Unlearning via the Lens of Memorization" will appear at KDD 2026.
-  members: [he-zhang]
+  text: Jiaheng Wei, Yanjun Zhang, He Zhang and Leo Zhang rethink federated unlearning through the lens of memorisation.
+  members: [jiaheng-wei, yanjun-zhang, he-zhang, leo-zhang]
   precision: month
 - date: 2026-04-01
   kind: paper
   title: Two papers at USENIX Security 2026 on agent skills and jailbreak defence
-  text: "\"Do Not Mention This to the User\" detects and characterises malicious agent skills (Yi Liu, Zhihao Chen, Yanjun Zhang, Leo Zhang and collaborators), and a second paper defends jailbreak attacks via manifold trajectory kinetics (with Yanjun Zhang, Yi Liu and Leo Zhang)."
+  text: "\"Do Not Mention This to the User\" detects malicious agent skills (Yi Liu, Zhihao Chen, Yanjun Zhang and Leo Zhang); a second paper by Yanjun Zhang, Yi Liu and Leo Zhang defends against jailbreaks using manifold trajectory kinetics."
   members: [yi-liu, zhihao-chen, yanjun-zhang, leo-zhang]
   precision: month
 - date: 2026-04-01
   kind: paper
   title: Four papers at ACL 2026 and ACL Findings
-  text: He Zhang's CIA infers the communication topology of LLM-based multi-agent systems; Yi Liu's LLM-VA resolves the jailbreak versus over-refusal trade-off; and Wei Song has two Findings papers on functionality-preserving dataset poisoning and on debiasing LLMs by masking attention heads.
-  members: [he-zhang, yi-liu, wei-song]
+  text: He Zhang's CIA infers the communication topology of LLM multi-agent systems; Wei Song has two Findings papers on dataset poisoning and on debiasing LLMs; Yi Liu's LLM-VA tackles the jailbreak versus over-refusal trade-off.
+  members: [he-zhang, wei-song, yi-liu]
   precision: month
+- date: 2026-03-01
+  kind: paper
+  title: Two IEEE TIFS papers on anonymous tokens and physical-world model extraction
+  text: T3AT gives threshold-authorised, non-transferable anonymous tokens (Leo Zhang with collaborators); PROTheft steals deployed models using a projector in the physical world (Yanjun Zhang and Leo Zhang).
+  members: [leo-zhang, yanjun-zhang]
+  precision: month
+- date: 2026-03-01
+  kind: grant
+  title: AUD 2.6M industry project on a trustworthy residential GPU network
+  text: Wei Song leads the security theme of an industry partnership on trustworthy, energy-aware load balancing for a distributed network of residential GPUs.
+  link: /projects/trustworthy-energy-aware-gpu-network/
+  members: [wei-song]
+  precision: year
 - date: 2026-02-01
   kind: people
-  title: He Zhang joins Griffith as a Lecturer
-  text: He Zhang joins the School of ICT from RMIT University. His research covers security for AI and trustworthy AI systems, including privacy-preserving technologies, graph learning, machine unlearning and LLM watermarking.
+  title: He Zhang joins the School of ICT as a Lecturer
+  text: He Zhang arrives from RMIT University. His research covers security for AI and trustworthy AI systems, including privacy-preserving technologies, graph learning, machine unlearning and LLM watermarking.
   members: [he-zhang]
+  precision: month
+- date: 2026-02-01
+  kind: paper
+  title: Post-quantum traceable anonymous credentials in IACR Communications in Cryptology
+  text: Qinyi Li and Leo Zhang, with Madusha Chathurangi and Ernest Foo, construct lattice-based anonymous credentials that remain traceable when abused.
+  members: [qinyi-li, leo-zhang]
   precision: month
 - date: 2026-01-01
   kind: paper
   title: Papers at WWW 2026 on ranking-based federated learning and next-generation CAPTCHAs
-  text: "\"Beyond Denial-of-Service\" shows fine-grained control attacks on ranking-based federated learning (Leo Zhang, Yanjun Zhang, Zhihao Chen and Zirui Gong with collaborators), and NgCaptcha, a demo by Ziqi Ding and Wei Song, bridges past and future CAPTCHA designs."
-  members: [leo-zhang, yanjun-zhang, zhihao-chen, zirui-gong, wei-song, ziqi-ding]
+  text: Zhihao Chen and Zirui Gong show fine-grained control attacks on ranking-based federated learning, with Yanjun Zhang and Leo Zhang; Ziqi Ding and Wei Song demonstrate NgCaptcha.
+  members: [zhihao-chen, zirui-gong, yanjun-zhang, leo-zhang, ziqi-ding, wei-song]
   precision: month
-- date: 2026-01-01
+- date: 2025-12-01
   kind: paper
-  title: Two preprints measure the security of LLM agent skills at scale
-  text: "\"Agent Skills in the Wild\" studies security vulnerabilities across thousands of published agent skills, and a companion study characterises deliberately malicious skills. Both are led by Yi Liu with Leo Zhang."
-  link: https://arxiv.org/abs/2601.10338
-  members: [yi-liu, leo-zhang]
+  title: Link inference attacks on federated graph neural networks at PETS 2026
+  text: Yanjun Zhang and Leo Zhang, with Guizhen Yang and collaborators, show poisoning-based link inference attacks against federated graph neural networks.
+  members: [yanjun-zhang, leo-zhang]
   precision: month
 - date: 2025-11-01
   kind: paper
   title: Six RISE papers accepted at AAAI 2026
-  text: He Zhang's work on stealthy membership inference in unlearned graph neural networks and on test-time graph out-of-distribution detection; Wei Song's study of failures to surface harmful content in video LLMs; and three papers from Leo Zhang and Yanjun Zhang's group on machine unlearning privacy exposure, transferable backdoors for code models and adversarially robust person re-identification.
-  members: [he-zhang, wei-song, leo-zhang, yanjun-zhang]
+  text: He Zhang on membership inference in unlearned GNNs and graph OOD detection; Wei Song and Yuxin Cao on harmful content in video LLMs; three papers from Leo Zhang and Yanjun Zhang's group with Lulu Xue, Shuyu Chang and Yuhang Zhou.
+  members: [he-zhang, wei-song, yuxin-cao, lulu-xue, shuyu-chang, yuhang-zhou, leo-zhang, yanjun-zhang]
+  precision: month
+- date: 2025-09-01
+  kind: paper
+  title: Three papers from Leo Zhang's group at NeurIPS 2025
+  text: AdvEDM attacks VLM-based embodied agents (with Lulu Xue), MARS defends federated learning against malicious backdoors, and a cross-prompt universal attack makes SAM2 segment nothing at all.
+  members: [leo-zhang, lulu-xue]
   precision: month
 - date: 2025-08-01
   kind: paper
   title: LLM watermark robustness paper accepted at NDSS 2026
-  text: "\"Character-Level Perturbations Disrupt LLM Watermarks\" by PhD students Zhaoxi Zhang and Xiaomei Zhang with Yanjun Zhang, He Zhang, Leo Zhang and collaborators shows how simple edits defeat current text watermarks."
+  text: PhD students Zhaoxi Zhang and Xiaomei Zhang, with Yanjun Zhang, He Zhang and Leo Zhang, show that character-level edits defeat current text watermarks.
   members: [zhaoxi-zhang, xiaomei-zhang, yanjun-zhang, he-zhang, leo-zhang]
+  precision: month
+- date: 2025-08-01
+  kind: paper
+  title: Two USENIX Security 2025 papers on machine unlearning and data-free attacks
+  text: Leo Zhang and collaborators present data duplication as a multi-purpose attack on machine unlearning, and data-free model-related attacks powered by generative AI.
+  members: [leo-zhang]
   precision: month
 - date: 2025-07-01
   kind: paper
   title: ViDToken accepted at RAID 2025
-  text: Wei Song's video-transformer latent token defence for adversarial video detection, with collaborators at CSIRO Data61 and UNSW Sydney, will appear at RAID 2025.
+  text: Wei Song's video-transformer latent token defence detects adversarial video, with collaborators at CSIRO Data61 and UNSW Sydney.
   members: [wei-song]
   precision: month
+- date: 2025-07-01
+  kind: paper
+  title: Lattice-based searchable encryption at ESORICS 2025
+  text: Qinyi Li presents predicate-private asymmetric searchable encryption for conjunctive queries, built from lattices.
+  members: [qinyi-li]
+  precision: month
 - date: 2025-06-01
-  kind: award
-  title: Yi Liu receives two Anthropic Safety Bug Bounty awards
-  text: The awards recognise responsibly disclosed safety issues in frontier models. Yi Liu also received the Most Innovative Paper Award at HMISA 2025.
-  members: [yi-liu]
-  precision: year
+  kind: paper
+  title: Test-time backdoor detection for object detectors at CVPR 2025
+  text: Hangtao Zhang, with Yanjun Zhang and Leo Zhang, detects backdoors in object detection models at inference time, without retraining.
+  members: [yanjun-zhang, leo-zhang]
+  precision: month
 - date: 2025-05-01
   kind: paper
   title: BiMark accepted at ICML 2025
-  text: >
-    He Zhang's "BiMark: Unbiased Multilayer Watermarking for Large Language Models" will appear at ICML 2025.
-  members: [he-zhang]
+  text: Xiaoyan Feng, Yanjun Zhang, He Zhang and Leo Zhang propose unbiased multilayer watermarking for large language models.
+  members: [xiaoyan-feng, yanjun-zhang, he-zhang, leo-zhang]
+  precision: month
+- date: 2025-04-01
+  kind: paper
+  title: Two papers at IEEE S&P 2025 on federated learning and transfer learning
+  text: Zirui Gong and Zhaoxi Zhang, with Yanjun Zhang and Leo Zhang, show that not all edges are equally robust in ranking-based federated learning; a second paper trains clean models on backdoored pre-trained encoders.
+  members: [zirui-gong, zhaoxi-zhang, yanjun-zhang, leo-zhang]
   precision: month
 - date: 2025-01-01
   kind: paper
   title: Papers at ICLR 2025 and WWW 2025
-  text: BadRobot, from Leo Zhang's group with Lulu Xue, jailbreaks embodied LLM agents in the physical world (ICLR 2025). He Zhang's dynamic graph unlearning method and IllusionCAPTCHA by Ziqi Ding and Yi Liu appear at WWW 2025.
+  text: BadRobot, from Leo Zhang's group with Lulu Xue, jailbreaks embodied LLM agents in the physical world. He Zhang's dynamic graph unlearning and IllusionCAPTCHA by Ziqi Ding and Yi Liu appear at WWW 2025.
   members: [leo-zhang, lulu-xue, he-zhang, ziqi-ding, yi-liu]
   precision: month
 - date: 2024-06-01
   kind: paper
   title: SecVID and PentestGPT at USENIX Security 2024
-  text: Wei Song's first work on adversarial video defence and Yi Liu's evaluation of LLMs for automated penetration testing are both presented at USENIX Security 2024.
+  text: Wei Song's SecVID corrects adversarial video attacks, and PentestGPT, with Yi Liu as a core contributor, evaluates large language models for automated penetration testing.
   link: /projects/pentestgpt/
-  members: [wei-song, yi-liu]
+  members: [wei-song, haonan-zhong, yi-liu]
+  precision: month
+- date: 2024-05-01
+  kind: paper
+  title: Four papers at IEEE S&P 2024 on differential privacy and backdoors
+  text: Yanjun Zhang co-authors bounded and unbiased composite differential privacy; Leo Zhang's group presents topological backdoor detection, secure fine-tuning of encoders (with Lulu Xue) and a study of why a little robustness helps.
+  members: [yanjun-zhang, leo-zhang, lulu-xue]
   precision: month
 - date: 2024-02-01
   kind: paper
-  title: MasterKey presented at NDSS 2024
-  text: Yi Liu's MasterKey automates jailbreaks across multiple LLM chatbots and is among the works cited by the OWASP LLM Top 10 and NIST.
-  members: [yi-liu]
+  title: GraphGuard at NDSS 2024 and a Proceedings of the IEEE survey
+  text: He Zhang's GraphGuard detects and counteracts training-data misuse in graph neural networks, and his survey of trustworthy graph neural networks appears in Proceedings of the IEEE.
+  members: [he-zhang]
+  precision: month
+- date: 2024-02-01
+  kind: paper
+  title: Public-key authenticated encryption with keyword search, made easy
+  text: Qinyi Li's simplified construction of public-key authenticated encryption with keyword search appears in IACR Communications in Cryptology.
+  members: [qinyi-li]
+  precision: month
+- date: 2024-01-01
+  kind: paper
+  title: Yanjun Zhang at ICSE 2024 and WWW 2024
+  text: Checking excessive data collection in voice-assistant apps (ICSE), and privacy-preserving, fairness-aware federated learning for critical infrastructure (WWW).
+  members: [yanjun-zhang]
   precision: month

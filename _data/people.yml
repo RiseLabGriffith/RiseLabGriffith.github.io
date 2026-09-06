@@ -24,12 +24,9 @@
   interests: [Trustworthy AI, Applied cryptography, Adversarial and poisoning attacks, Privacy-preserving computation, Authentication]
   layers: [R, I, S]
   bio: >
-    Leo Zhang is an Associate Professor in the School of ICT at Griffith University and was previously with Deakin
-    University. He received his PhD in Electrical Engineering from the City University of Hong Kong. His research
-    focuses on trustworthy AI (adversarial, backdoor, poisoning, privacy, jailbreak and injection attacks and
-    defences) and applied cryptography (privacy-preserving computation and authentication in emerging settings),
-    with publications in IEEE TIFS, IEEE TDSC, IEEE S&P, USENIX Security, NDSS, ICLR, ICML, NeurIPS, CVPR and AAAI.
-    He received the 2021 AISA Researcher of the Year award and serves as Associate Editor for IEEE TDSC, TMM and TCYB.
+    Leo Zhang is an Associate Professor at Griffith and directs RISE. He works on trustworthy AI, from
+    adversarial, backdoor and privacy attacks to their defences, and on applied cryptography for privacy-preserving computation and authentication. He received the 2021 AISA Researcher of the Year award and is an
+    Associate Editor of IEEE TDSC.
 
 # ---- Academic members -------------------------------------------------------
 - id: yanjun-zhang
@@ -46,11 +43,9 @@
   interests: [Trustworthy AI, Privacy-preserving computation, Adversarial and backdoor attacks, Federated learning]
   layers: [I, S]
   bio: >
-    Yanjun Zhang is a Senior Lecturer in the School of ICT at Griffith University. She was previously with the
-    University of Technology Sydney and Deakin University, and received her PhD in Computer Science from the
-    University of Queensland in 2021. Her research centres on trustworthy AI, including adversarial, backdoor,
-    poisoning and privacy attacks and defences, and privacy-preserving computation, with publications in IEEE
-    TIFS, IEEE TDSC, IEEE S&P, NDSS, ICML, CVPR and AAAI.
+    Yanjun Zhang is a Senior Lecturer who joined Griffith from the University of Technology Sydney, after a PhD at
+    the University of Queensland. Her research covers adversarial, backdoor, poisoning and privacy attacks and
+    defences for machine learning, and privacy-preserving computation, published at IEEE S&P, NDSS, ICML and CVPR.
 
 - id: qinyi-li
   name: Qinyi Li
@@ -66,11 +61,9 @@
   interests: [Cryptography, Lattice-based cryptography, Secure protocols, Network security]
   layers: [S]
   bio: >
-    Qinyi Li has been a Lecturer in the School of ICT at Griffith University since 2019, following a postdoctoral
-    fellowship at Queensland University of Technology, where he also completed his PhD in 2017. His research focuses
-    on cryptography and security, with work published at major cryptography venues including CRYPTO and ASIACRYPT.
-    He coordinates Griffith's courses in cryptography, network security and cyber security management and is a
-    member of the International Association for Cryptologic Research.
+    Qinyi Li has been a Lecturer at Griffith since 2019, after a PhD and postdoctoral fellowship at Queensland
+    University of Technology. He works on lattice-based cryptography, searchable encryption and secure protocols,
+    with papers at CRYPTO and ASIACRYPT, and coordinates Griffith's cryptography and network security courses.
 
 - id: he-zhang
   name: He Zhang
@@ -89,11 +82,9 @@
   interests: [Security for AI, Trustworthy graph learning, Machine unlearning, LLM watermarking, Fairness and privacy]
   layers: [R, I, S]
   bio: >
-    He Zhang is a Lecturer in the School of ICT at Griffith University, which he joined in February 2026 from RMIT
-    University. He obtained his PhD from Monash University. His research spans security for AI and trustworthy AI
-    systems: privacy-preserving technologies for AI security, individual trustworthiness aspects such as robustness,
-    explainability, privacy and fairness, and the interplay among them. His work appears in ICML, NDSS, WWW, AAAI,
-    KDD, ICDE, Proceedings of the IEEE and IEEE TKDE.
+    He Zhang joined Griffith as a Lecturer in February 2026 from RMIT University, after a PhD at Monash
+    University. He studies security for AI and trustworthy AI systems: privacy-preserving technologies, graph
+    learning, machine unlearning and LLM watermarking, with work in ICML, NDSS, KDD and Proceedings of the IEEE.
 
 - id: yi-liu
   name: Yi Liu
@@ -111,12 +102,9 @@
   interests: [LLM security, AI agent security, Software engineering and testing, Automated penetration testing]
   layers: [I, E]
   bio: >
-    Yi Liu is an incoming Lecturer in the School of ICT at Griffith University. He received his PhD from Nanyang
-    Technological University, Singapore, and was most recently an AI Research Engineer at Quantstamp building an AI
-    firewall. His research on LLM security, AI agent security and software testing has appeared at IEEE S&P, ACM
-    CCS, USENIX Security, NDSS, ICSE, FSE, ACL, OOPSLA and ASE, and has been cited by the OWASP LLM Top 10, NIST,
-    Google DeepMind and OpenAI. He is a core contributor to PentestGPT and has disclosed vulnerabilities in major
-    AI coding agents.
+    Yi Liu is an incoming Lecturer, after a PhD at Nanyang Technological University and a role as AI Research
+    Engineer at Quantstamp. He works on LLM and AI agent security and software testing, with papers at IEEE S&P,
+    CCS, USENIX Security, NDSS and ICSE, and is a core contributor to PentestGPT.
 
 - id: wei-song
   name: Wei Song
@@ -134,11 +122,9 @@
   interests: [Adversarial machine learning, AI watermarking, AI security for energy systems, Video LLM safety]
   layers: [I, E]
   bio: >
-    Wei Song is an incoming Lecturer in the School of ICT at Griffith University. He completed his PhD at UNSW
-    Sydney in 2024 and continued there as a Postdoctoral Research Fellow. His research focuses on AI security,
-    particularly adversarial machine learning, AI watermarking and AI security for energy systems, with work at
-    USENIX Security, RAID, AAAI, ASE, EMNLP and ACM IMWUT. He leads AUD 3.9M of funded work on secure AI for
-    distributed energy assets and co-founded the spinout SunstackAI.
+    Wei Song is an incoming Lecturer, after a PhD and postdoctoral fellowship at UNSW Sydney. He works on
+    adversarial machine learning, AI watermarking and AI security for energy systems, leads AUD 3.9M of funded
+    work on secure AI for distributed energy assets and co-founded the spinout SunstackAI.
 
 # ---- PhD students at Griffith ----------------------------------------------
 - id: zhihao-chen

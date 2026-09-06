@@ -212,3 +212,19 @@ def test_hero_letters_link_to_layers(server, page):
     page.wait_for_function("getComputedStyle(document.querySelector('[data-letter=\"I\"] .wordmark__phrase')).opacity === '1'", timeout=3000)
     letters.nth(1).click()
     assert page.url.endswith("/research/#layer-I")
+
+
+WIDE = {"viewport": {"width": 1920, "height": 1000}}
+
+
+@pytest.mark.parametrize("page", [WIDE], indirect=True)
+def test_wide_screens_use_the_full_width(server, page):
+    page.goto(server + "/")
+    copy = page.locator(".hero__copy").bounding_box()
+    bands = page.locator(".hero__bands").bounding_box()
+    assert bands["x"] >= copy["x"] + copy["width"], "hero bands sit beside the copy on wide screens"
+    assert copy["width"] + bands["width"] >= 1200
+    page.goto(server + "/about/")
+    rail = page.locator(".rail").first.bounding_box()
+    body = page.locator(".rail + *").first.bounding_box()
+    assert body["x"] > rail["x"] + rail["width"] - 1, "section label sits in a left rail"

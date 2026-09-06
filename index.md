@@ -12,41 +12,65 @@ body_class: home
 {%- assign students = people | where: "role", "student" -%}
 {%- assign topic_count = 0 -%}
 {%- for layer in layers -%}{%- assign topic_count = topic_count | plus: layer.topics.size -%}{%- endfor -%}
-{%- assign selected_pubs = site.data.publications | where: "selected", true | sort: "year" | reverse -%}
 {%- assign featured_projects = site.projects | where: "featured", true | sort: "order" -%}
-{%- assign latest_news = site.data.news -%}
+
+{%- comment -%} Selected publications for the home page: the newest selected paper of each academic, then the newest remaining ones, six in all. {%- endcomment -%}
+{%- assign selected_pubs = site.data.publications | where: "selected", true | sort: "year" | reverse -%}
+{%- assign home_pubs = "" | split: "" -%}
+{%- for a in academics -%}
+  {%- assign picked = false -%}
+  {%- for pub in selected_pubs -%}
+    {%- if picked == false and pub.members contains a.id -%}
+      {%- assign dup = false -%}
+      {%- for h in home_pubs -%}{%- if h.id == pub.id -%}{%- assign dup = true -%}{%- endif -%}{%- endfor -%}
+      {%- if dup == false -%}{%- assign home_pubs = home_pubs | push: pub -%}{%- assign picked = true -%}{%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- for pub in selected_pubs -%}
+  {%- if home_pubs.size < 6 -%}
+    {%- assign dup = false -%}
+    {%- for h in home_pubs -%}{%- if h.id == pub.id -%}{%- assign dup = true -%}{%- endif -%}{%- endfor -%}
+    {%- if dup == false -%}{%- assign home_pubs = home_pubs | push: pub -%}{%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
 
 <section class="hero">
-  <div class="hero__line" aria-hidden="true"></div>
-  <div class="container hero__inner">
-    <p class="eyebrow">Responsible · Intelligent · Secure Engineering</p>
-    <h1 class="wordmark" aria-label="RISE Lab">
-      <span class="wordmark__word" aria-hidden="true">
-        {%- for layer in layers -%}
-        <a class="wordmark__letter" href="{{ '/research/#layer-' | append: layer.id | relative_url }}" data-letter="{{ layer.letter }}" tabindex="-1"><span class="wordmark__glyph">{{ layer.letter }}</span><span class="wordmark__phrase">{{ layer.short }}</span></a>
-        {%- endfor -%}
-      </span>
-      <span class="wordmark__lab" aria-hidden="true">Lab</span>
-    </h1>
-    <p class="hero__hint meta" aria-hidden="true">Hover a letter to see its layer</p>
-    <p class="hero__vision">A future in which intelligent systems can be adopted with confidence, because responsibility, security, privacy and assurance are engineered across their full lifecycle.</p>
-    <p class="hero__where">A researcher-led cybersecurity lab in the School of Information and Communication Technology, Griffith University.</p>
-    <div class="button-row hero__buttons">
-      <a class="button" href="{{ '/research/' | relative_url }}">Explore the research</a>
-      <a class="button button--ghost" href="{{ '/join/' | relative_url }}">Join us</a>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <h1 class="wordmark" aria-label="RISE Lab">
+        <span class="wordmark__word" aria-hidden="true">
+          {%- for layer in layers -%}
+          <a class="wordmark__letter" href="{{ '/research/#layer-' | append: layer.id | relative_url }}" data-letter="{{ layer.letter }}" tabindex="-1"><span class="wordmark__glyph">{{ layer.letter }}</span><span class="wordmark__phrase">{{ layer.short }}</span></a>
+          {%- endfor -%}
+        </span>
+        <span class="wordmark__lab" aria-hidden="true">Lab</span>
+      </h1>
+      <p class="hero__vision">Cybersecurity engineered across the whole lifecycle of intelligent systems.</p>
+      <p class="hero__where">A researcher-led lab in the School of Information and Communication Technology at Griffith University, Gold Coast and Brisbane.</p>
+      <div class="button-row hero__buttons">
+        <a class="button" href="{{ '/research/' | relative_url }}">Explore the research</a>
+        <a class="button button--ghost" href="{{ '/join/' | relative_url }}">Join the lab</a>
+      </div>
     </div>
+    <ul class="hero__bands" aria-label="The four RISE layers">
+      {%- for layer in layers -%}
+      <li class="band band--{{ layer.id }}" style="--i: {{ forloop.index0 }}"><a href="{{ '/research/#layer-' | append: layer.id | relative_url }}"><span class="band__letter" aria-hidden="true">{{ layer.letter }}</span><span class="band__name">{{ layer.name }}</span></a></li>
+      {%- endfor -%}
+    </ul>
   </div>
 </section>
 
-<section class="section section--tight home-stack">
-  <div class="container">
-    <div class="home-section__head">
-      <p class="eyebrow">The RISE framework</p>
-      <h2>Four layers across one lifecycle</h2>
-      <p class="home-section__lede">Responsible and resilient cybersecurity, intelligent cyber defence and secure foundations feed an engineering layer that turns them into deployed, continuously assured systems. Open a layer to see its keywords and research topics.</p>
+<section class="band-section home-stack">
+  <div class="container chapter">
+    <div class="rail">
+      <h2>The RISE framework</h2>
+      <p class="rail__note meta">Four layers, one lifecycle. Open a layer to see its keywords and topics.</p>
     </div>
-    {% include framework-stack.html mode="compact" %}
-    <p class="home-section__more"><a href="{{ '/research/' | relative_url }}">Explore all {{ topic_count }} research topics</a></p>
+    <div class="chapter__body">
+      {% include framework-stack.html mode="compact" %}
+      <p class="home-more"><a href="{{ '/research/' | relative_url }}">All {{ topic_count }} research topics</a></p>
+    </div>
   </div>
 </section>
 
@@ -59,60 +83,83 @@ body_class: home
   </div>
 </section>
 
-<section class="section home-news">
-  <div class="container">
-    <div class="home-section__head home-section__head--row">
-      <div><p class="eyebrow">News</p><h2>Latest news</h2></div>
-      <a class="home-section__link" href="{{ '/news/' | relative_url }}">All news and events</a>
+<section class="band-section home-news">
+  <div class="container chapter">
+    <div class="rail">
+      <h2>Latest news</h2>
+      <a class="rail__link" href="{{ '/news/' | relative_url }}">All news and events</a>
     </div>
-    <div class="news-cards">
-      {%- for n in latest_news limit: 3 -%}
-      {%- assign kind = n.kind | default: "general" -%}
-      <article class="news-card card rail-{% case kind %}{% when 'paper' %}I{% when 'grant' %}E{% when 'people' %}S{% else %}R{% endcase %}">
-        <p class="news-item__meta"><time datetime="{{ n.date | date: '%Y-%m-%d' }}">{% if n.precision == "year" %}{{ n.date | date: "%Y" }}{% else %}{{ n.date | date: "%B %Y" }}{% endif %}</time> <span class="news-item__kind">{{ kind }}</span></p>
-        <h3 class="news-card__title">{% if n.link %}<a href="{{ n.link | relative_url }}">{{ n.title }}</a>{% else %}<a href="{{ '/news/' | relative_url }}">{{ n.title }}</a>{% endif %}</h3>
-        <p class="news-card__text">{{ n.text | truncatewords: 32 }}</p>
-      </article>
-      {%- endfor -%}
+    <div class="chapter__body">
+      <ol class="news-lines">
+        {%- for n in site.data.news limit: 5 -%}{% include news-line.html item=n %}{%- endfor -%}
+      </ol>
     </div>
   </div>
 </section>
 
-<section class="section section--tight home-pubs">
-  <div class="container">
-    <div class="home-section__head home-section__head--row">
-      <div><p class="eyebrow">Publications</p><h2>Selected publications</h2></div>
-      <a class="home-section__link" href="{{ '/publications/?selected=1' | relative_url }}">All selected publications</a>
+<section class="band-section home-people">
+  <div class="container chapter">
+    <div class="rail">
+      <h2>People</h2>
+      <p class="rail__note meta">Six academics, their PhD students, visitors and collaborators.</p>
+      <a class="rail__link" href="{{ '/people/' | relative_url }}">Everyone in the lab</a>
     </div>
-    <div class="pub-list pub-list--compact">
-      {%- for pub in selected_pubs limit: 6 -%}{% include pub-item.html pub=pub %}{%- endfor -%}
+    <div class="chapter__body">
+      <ul class="faces">
+        {%- for p in academics -%}
+        <li class="face">
+          <a href="{{ '/people/#' | append: p.id | relative_url }}">
+            <img class="face__photo" src="{{ '/assets/img/people/' | append: p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="300" height="300" loading="lazy">
+            <span class="face__name">{{ p.name }}</span>
+            <span class="face__role">{% if p.role == "director" %}Lab Director{% else %}{{ p.position }}{% endif %}</span>
+            <span class="face__focus">{{ p.interests | slice: 0, 2 | join: ", " }}</span>
+          </a>
+        </li>
+        {%- endfor -%}
+      </ul>
     </div>
-    <p class="home-section__more"><a href="{{ '/publications/' | relative_url }}">Browse all {{ site.data.publications.size }} publications</a></p>
   </div>
 </section>
 
-<section class="section home-projects">
-  <div class="container">
-    <div class="home-section__head home-section__head--row">
-      <div><p class="eyebrow">Projects</p><h2>Featured projects</h2></div>
-      <a class="home-section__link" href="{{ '/projects/' | relative_url }}">All projects</a>
+<section class="band-section home-pubs">
+  <div class="container chapter">
+    <div class="rail">
+      <h2>Selected publications</h2>
+      <a class="rail__link" href="{{ '/publications/?selected=1' | relative_url }}">All selected publications</a>
     </div>
-    <div class="card-grid">
-      {%- for pr in featured_projects limit: 3 -%}{% include project-card.html project=pr %}{%- endfor -%}
+    <div class="chapter__body">
+      <div class="pub-list pub-list--compact">
+        {%- for pub in home_pubs limit: 6 -%}{% include pub-item.html pub=pub compact=true %}{%- endfor -%}
+      </div>
+      <p class="home-more"><a href="{{ '/publications/' | relative_url }}">Browse all {{ site.data.publications.size }} publications</a></p>
     </div>
   </div>
 </section>
 
-<section class="cta">
-  <div class="container cta__inner">
-    <div>
-      <p class="eyebrow eyebrow--onnavy">Join RISE</p>
-      <h2 class="cta__title">Build secure, private and resilient intelligent systems with us</h2>
+<section class="band-section band-section--cloud home-projects">
+  <div class="container chapter">
+    <div class="rail">
+      <h2>Featured projects</h2>
+      <a class="rail__link" href="{{ '/projects/' | relative_url }}">All projects</a>
+    </div>
+    <div class="chapter__body">
+      <div class="card-grid">
+        {%- for pr in featured_projects limit: 3 -%}{% include project-card.html project=pr %}{%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-section band-section--navy cta">
+  <div class="container chapter">
+    <div class="rail"><h2>Join RISE</h2></div>
+    <div class="chapter__body">
+      <h2 class="cta__title">Study, research or partner with us</h2>
       <p class="cta__text">PhD scholarships, postdoctoral and visiting positions, honours and capstone projects, and partnerships with industry and government.</p>
-    </div>
-    <div class="button-row cta__buttons">
-      <a class="button" href="{{ '/join/' | relative_url }}">Opportunities</a>
-      <a class="button button--onnavy" href="mailto:{{ site.data.site.email }}">Email the lab</a>
+      <div class="button-row cta__buttons">
+        <a class="button" href="{{ '/join/' | relative_url }}">See the opportunities</a>
+        <a class="button button--onnavy" href="mailto:{{ site.data.site.email }}">Email the lab</a>
+      </div>
     </div>
   </div>
 </section>

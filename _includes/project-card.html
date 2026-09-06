@@ -1,16 +1,15 @@
 {%- comment -%} Project summary card. Usage: {% include project-card.html project=pr %} {%- endcomment -%}
 {%- assign pr = include.project -%}
-{%- assign primary = pr.layers | first -%}
 {%- case pr.kind -%}
   {%- when "funded" -%}{%- assign kind_label = "Funded project" -%}
   {%- when "software" -%}{%- assign kind_label = "Software" -%}
   {%- else -%}{%- assign kind_label = "Research direction" -%}
 {%- endcase -%}
-<article class="project card rail-{{ primary }}" data-kind="{{ pr.kind }}" data-layers="{{ pr.layers | join: ' ' }}">
-  <p class="project__kind meta">{{ kind_label }} · <span class="status status--{{ pr.status }}">{{ pr.status | capitalize }}</span></p>
+<article class="project card" data-kind="{{ pr.kind }}" data-layers="{{ pr.layers | join: ' ' }}">
+  <p class="project__kind label">{{ kind_label }} <span class="status status--{{ pr.status }}">{{ pr.status | capitalize }}</span></p>
   <h3 class="project__title"><a href="{{ pr.url | relative_url }}">{{ pr.title }}</a></h3>
   <p class="project__summary">{{ pr.summary }}</p>
-  {%- if pr.funding %}<p class="project__funding meta">{{ pr.funding }}{% if pr.funder %} · {{ pr.funder }}{% endif %}</p>{% endif -%}
+  {%- if pr.funding %}<p class="project__funding meta">{{ pr.funding }}{% if pr.funder %}, {{ pr.funder }}{% endif %}</p>{% endif -%}
   <div class="project__foot">
     <div class="tag-row" aria-label="Framework layers">{% for L in pr.layers %}{% include layer-tag.html letter=L %}{% endfor %}</div>
     {%- if pr.members -%}
@@ -19,7 +18,7 @@
       {%- assign person = site.data.people | where: "id", mid | first -%}
       {%- if person %}{{ person.name }}{% unless forloop.last %}, {% endunless %}{% endif -%}
       {%- endfor -%}
-      {%- if pr.members.size > 3 %} +{{ pr.members.size | minus: 3 }}{% endif -%}
+      {%- if pr.members.size > 3 %} and {{ pr.members.size | minus: 3 }} more{% endif -%}
     </p>
     {%- endif -%}
   </div>
