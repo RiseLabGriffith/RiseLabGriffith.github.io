@@ -282,3 +282,12 @@ Brand mark, "Page not found", links to main sections.
 - `scripts/check_data.py` passes.
 - Every page rendered headless in Chrome at 1280px and 390px and screenshot-reviewed; keyboard walk-through of framework stack, theme toggle, filters and copy.
 - Internal links checked against `_site`.
+
+## Addendum: editorial revision (6 September 2026)
+
+After the first build the site was revised for design and balance. The changes supersede the visual system and home page sections above.
+
+- **Type.** IBM Plex Mono is removed. Source Serif 4 (headings, wordmark, numerals) and Inter (text and labels) only. Labels are sentence case, never tracked capitals.
+- **Layout.** Container 1280px. Page sections are chapters: a 220px sticky rail with the section name on the left, content on the right. Cards remain only for projects, openings and events; other lists use hairlines. The dotted banner background is gone.
+- **Home.** Hero is two columns: wordmark and vision on the left, four full-colour layer bands running off the right edge. Sections: framework, numbers, five one-line news items, the six academic members with photos, six selected publications (newest per academic), three featured projects led by different members, join call to action.
+- **Content.** Intros, bios, topic summaries, openings and news are capped in length and checked by `tests/test_content.py`, which also enforces that news covers every academic and is not dominated by one member.

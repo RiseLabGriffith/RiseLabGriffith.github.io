@@ -1,41 +1,46 @@
 // Design tokens. Light theme on :root; dark theme overrides below.
+// Two typefaces only: Source Serif 4 for display and headings, Inter for everything else.
 :root {
   --paper: #faf9f6;
   --surface: #ffffff;
-  --cloud: #eff1f4;
+  --cloud: #f1efea;
+  --cloud-2: #e7e4dd;
   --ink: #101828;
-  --muted: #5b6472;
-  --line: #e3e6ea;
-  --line-strong: #c9cfd6;
+  --muted: #5f6673;
+  --line: #e2dfd8;
+  --line-strong: #c6c2b9;
   --navy: #0b1f3a;
   --navy-2: #132b4d;
   --on-navy: #ffffff;
-  --on-navy-muted: rgba(255, 255, 255, 0.72);
+  --on-navy-muted: rgba(255, 255, 255, 0.7);
   --red: #c8102e;
   --red-hover: #a80d27;
   --red-soft: #fbe9ec;
-  --link: #0b1f3a;
+  --link: #101828;
 
   --layer-R: #2a4d9b;
   --layer-I: #0e7c5b;
   --layer-S: #b8232f;
   --layer-E: #a0561b;
-  --layer-R-soft: #e9eef9;
-  --layer-I-soft: #e4f3ed;
-  --layer-S-soft: #f9e8ea;
-  --layer-E-soft: #f6ede3;
+  --layer-R-soft: #e8edf8;
+  --layer-I-soft: #e2f1ea;
+  --layer-S-soft: #f8e6e7;
+  --layer-E-soft: #f5ebe0;
+  // Saturated fills for the hero bands; white type sits on these in both themes.
+  --band-R: #2a4d9b;
+  --band-I: #0e7c5b;
+  --band-S: #b8232f;
+  --band-E: #a0561b;
 
   --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-body: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --max: 1160px;
-  --gutter: 24px;
-  --radius: 8px;
-  --radius-sm: 5px;
-  --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 10px 28px rgba(16, 24, 40, 0.06);
-  --shadow-hover: 0 2px 4px rgba(16, 24, 40, 0.05), 0 14px 36px rgba(16, 24, 40, 0.1);
-  --grid-dot: rgba(11, 31, 58, 0.12);
+  --max: 1280px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --rail: 220px;
+  --rail-gap: clamp(32px, 4vw, 64px);
+  --radius: 6px;
+  --radius-sm: 3px;
   --brand-bg: #0b1f3a;
 
   color-scheme: light;
@@ -44,11 +49,12 @@
 @mixin dark-tokens {
   --paper: #0e141c;
   --surface: #141c26;
-  --cloud: #1a2431;
+  --cloud: #161e29;
+  --cloud-2: #1f2937;
   --ink: #e8ecf1;
-  --muted: #98a2b3;
+  --muted: #9aa3b2;
   --line: #26303d;
-  --line-strong: #37424f;
+  --line-strong: #3a4553;
   --navy: #0a1522;
   --navy-2: #0f1c2c;
   --on-navy: #f2f5f8;
@@ -56,7 +62,7 @@
   --red: #ff5c6c;
   --red-hover: #ff7a87;
   --red-soft: #3a1a20;
-  --link: #dfe6ef;
+  --link: #e8ecf1;
 
   --layer-R: #7b9bea;
   --layer-I: #3fbf97;
@@ -67,9 +73,6 @@
   --layer-S-soft: rgba(240, 112, 122, 0.14);
   --layer-E-soft: rgba(224, 154, 92, 0.14);
 
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 28px rgba(0, 0, 0, 0.35);
-  --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.35), 0 14px 36px rgba(0, 0, 0, 0.45);
-  --grid-dot: rgba(232, 236, 241, 0.1);
   --brand-bg: #1a2a44;
 
   color-scheme: dark;

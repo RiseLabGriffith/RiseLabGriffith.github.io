@@ -1,12 +1,12 @@
 {%- comment -%} Seminar or reading-group entry. Usage: {% include event-item.html event=e past=true %} {%- endcomment -%}
 {%- assign e = include.event -%}
-<article class="event event--{{ e.kind }}{% if e.tentative %} event--tentative{% endif %}{% if include.past %} event--past{% endif %}">
+<article class="event card event--{{ e.kind }}{% if e.tentative %} event--tentative{% endif %}{% if include.past %} event--past{% endif %}">
   <div class="event__date" aria-hidden="true"><span class="event__day">{{ e.date | date: "%-d" }}</span><span class="event__month">{{ e.date | date: "%b %Y" }}</span></div>
   <div class="event__body">
-    <p class="event__kind meta">{{ e.kind | replace: "-", " " }}{% if e.tentative %} · to be confirmed{% endif %}</p>
+    <p class="event__kind label">{{ e.kind | replace: "-", " " | capitalize }}{% if e.tentative %}, to be confirmed{% endif %}</p>
     <h3 class="event__title">{% if e.link %}<a href="{{ e.link }}" rel="noopener">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}</h3>
     {%- if e.speaker %}<p class="event__speaker">{{ e.speaker }}{% if e.affiliation %}, {{ e.affiliation }}{% endif %}</p>{% endif -%}
-    <p class="event__when meta"><time datetime="{{ e.date | date: '%Y-%m-%d' }}">{{ e.date | date: "%A %-d %B %Y" }}</time>{% if e.time %} · {{ e.time }}{% endif %}{% if e.location %} · {{ e.location }}{% endif %}</p>
+    <p class="event__when meta"><time datetime="{{ e.date | date: '%Y-%m-%d' }}">{{ e.date | date: "%A %-d %B %Y" }}</time>{% if e.time %}, {{ e.time }}{% endif %}{% if e.location %}. {{ e.location }}{% endif %}</p>
     {%- if e.abstract %}<details class="event__abstract"><summary>Details</summary><p>{{ e.abstract }}</p></details>{% endif -%}
   </div>
 </article>

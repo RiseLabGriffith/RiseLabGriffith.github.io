@@ -6,6 +6,7 @@ status: proposed
 layers: [S, I, E]
 topics: [privacy-preserving-data, secure-computation, threat-intelligence-analytics]
 members: [leo-zhang, yanjun-zhang, qinyi-li]
+featured: true
 order: 2
 pub_query: topic=privacy-preserving-data
 ---

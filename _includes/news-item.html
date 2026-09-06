@@ -1,4 +1,4 @@
-{%- comment -%} Timeline entry. Usage: {% include news-item.html item=n %} {%- endcomment -%}
+{%- comment -%} Timeline entry on the News page. Usage: {% include news-item.html item=n %} {%- endcomment -%}
 {%- assign n = include.item -%}
 {%- assign kind = n.kind | default: "general" -%}
 {%- case n.precision -%}
@@ -7,14 +7,14 @@
   {%- else -%}{%- assign shown_date = n.date | date: "%-d %B %Y" -%}
 {%- endcase -%}
 <article class="news-item news-item--{{ kind }}">
-  <p class="news-item__meta"><time datetime="{{ n.date | date: '%Y-%m-%d' }}">{{ shown_date }}</time> <span class="news-item__kind">{{ kind | replace: "-", " " }}</span></p>
-  <h3 class="news-item__title">{% if n.link %}<a href="{{ n.link | relative_url }}"{% unless n.link contains '://' %}{% else %} rel="noopener"{% endunless %}>{{ n.title }}</a>{% else %}{{ n.title }}{% endif %}</h3>
+  <p class="news-item__meta"><time datetime="{{ n.date | date: '%Y-%m-%d' }}">{{ shown_date }}</time>, {{ kind | replace: "-", " " }}</p>
+  <h3 class="news-item__title">{% if n.link %}<a href="{{ n.link | relative_url }}"{% if n.link contains '://' %} rel="noopener"{% endif %}>{{ n.title }}</a>{% else %}{{ n.title }}{% endif %}</h3>
   <p class="news-item__text">{{ n.text }}</p>
   {%- if n.members -%}
   <p class="news-item__people meta">
     {%- for mid in n.members -%}
     {%- assign person = site.data.people | where: "id", mid | first -%}
-    {%- if person %}<a href="{{ '/people/#' | append: person.id | relative_url }}">{{ person.name }}</a>{% unless forloop.last %} · {% endunless %}{% endif -%}
+    {%- if person %}<a href="{{ '/people/#' | append: person.id | relative_url }}">{{ person.name }}</a>{% unless forloop.last %}, {% endunless %}{% endif -%}
     {%- endfor -%}
   </p>
   {%- endif -%}

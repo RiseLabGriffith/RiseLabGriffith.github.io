@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-{%- assign primary = page.layers | first -%}
 {%- case page.kind -%}
   {%- when "funded" -%}{%- assign kind_label = "Funded project" -%}
   {%- when "software" -%}{%- assign kind_label = "Software and artefacts" -%}
@@ -9,18 +8,19 @@ layout: default
 {%- endcase -%}
 <section class="banner banner--project">
   <div class="container">
-    <p class="eyebrow"><a href="{{ '/projects/' | relative_url }}">Projects</a> · {{ kind_label }}</p>
+    <p class="banner__crumb label"><a href="{{ '/projects/' | relative_url }}">Projects</a>, {{ kind_label | downcase }}</p>
     <h1>{{ page.title }}</h1>
     <p class="lede">{{ page.summary }}</p>
     <div class="tag-row banner__tags" aria-label="Framework layers">{% for L in page.layers %}{% include layer-tag.html letter=L label=true %}{% endfor %}</div>
   </div>
 </section>
-<div class="container project-layout">
+<div class="container page-body">
+<div class="project-layout">
   <article class="prose project-body">
     {{ content }}
   </article>
   <aside class="project-aside">
-    <div class="card card--flat rail-{{ primary }} facts-card">
+    <div class="card card--flat facts-card">
       <dl class="facts">
         <dt>Status</dt><dd><span class="status status--{{ page.status }}">{{ page.status | capitalize }}</span></dd>
         <dt>Layers</dt><dd><div class="tag-row">{% for L in page.layers %}{% include layer-tag.html letter=L %}{% endfor %}</div></dd>
@@ -61,13 +61,14 @@ layout: default
 {%- endif -%}
 {%- assign related = related | uniq | sort: "year" | reverse -%}
 {%- if related.size > 0 -%}
-<section class="section--tight">
-  <div class="container">
-    <h2 class="related__title">Related publications</h2>
+<section class="chapter">
+  <div class="rail"><h2>Related publications</h2></div>
+  <div class="chapter__body">
     <div class="pub-list pub-list--compact">
-      {%- for pub in related limit: 6 -%}{% include pub-item.html pub=pub %}{%- endfor -%}
+      {%- for pub in related limit: 6 -%}{% include pub-item.html pub=pub compact=true %}{%- endfor -%}
     </div>
     <p class="related__more"><a href="{{ '/publications/' | append: '?' | append: page.pub_query | default: '/publications/' | relative_url }}">Browse all publications</a></p>
   </div>
 </section>
 {%- endif -%}
+</div>

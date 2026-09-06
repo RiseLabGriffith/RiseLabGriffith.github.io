@@ -1,0 +1,19 @@
+{%- comment -%} One-line news entry for the home page. Usage: {% include news-line.html item=n %} {%- endcomment -%}
+{%- assign n = include.item -%}
+{%- assign kind = n.kind | default: "general" -%}
+{%- if n.precision == "year" -%}{%- assign shown_date = n.date | date: "%Y" -%}{%- else -%}{%- assign shown_date = n.date | date: "%b %Y" -%}{%- endif -%}
+<li class="news-line news-line--{{ kind }}">
+  <span class="news-line__when"><time datetime="{{ n.date | date: '%Y-%m-%d' }}">{{ shown_date }}</time><span class="news-line__kind">{{ kind | replace: "-", " " | capitalize }}</span></span>
+  <div>
+    <h3 class="news-line__title"><a href="{% if n.link %}{{ n.link | relative_url }}{% else %}{{ '/news/' | relative_url }}{% endif %}"{% if n.link contains '://' %} rel="noopener"{% endif %}>{{ n.title }}</a></h3>
+    {%- if n.members -%}
+    <span class="news-line__who">
+      {%- for mid in n.members limit: 4 -%}
+      {%- assign person = site.data.people | where: "id", mid | first -%}
+      {%- if person %}<a href="{{ '/people/#' | append: person.id | relative_url }}">{{ person.name }}</a>{% unless forloop.last %}, {% endunless %}{% endif -%}
+      {%- endfor -%}
+      {%- if n.members.size > 4 %} and others{% endif -%}
+    </span>
+    {%- endif -%}
+  </div>
+</li>

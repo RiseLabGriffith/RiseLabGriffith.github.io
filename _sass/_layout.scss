@@ -1,42 +1,60 @@
 .container { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; }
-.section { padding: clamp(56px, 8vw, 96px) 0; }
-.section--tight { padding: clamp(40px, 5vw, 64px) 0; }
-.section--cloud { background: var(--cloud); }
-.section__head {
-  display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px;
-  h2 { margin: 0; }
-  .section__more { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+
+// Chapters: a left rail holding the section name, content on the right. On narrow screens the rail stacks on top.
+.chapter {
+  display: grid; grid-template-columns: 1fr; gap: 16px var(--rail-gap); align-items: start;
+  padding: clamp(40px, 5vw, 72px) 0; border-top: 1px solid var(--line); scroll-margin-top: 84px;
+  &:first-child, &--open { border-top: 0; }
+}
+.chapter--tight { padding: clamp(28px, 3.5vw, 48px) 0; }
+.chapter--flush { padding-top: 0; }
+.rail {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px;
+  h2, .rail__title { font-family: var(--font-display); font-weight: 500; font-size: 1.25rem; line-height: 1.3; margin: 0; letter-spacing: 0; text-wrap: balance; }
+  .rail__note { margin: 0; flex-basis: 100%; }
+  .rail__link { font-size: 0.875rem; }
+}
+.chapter__body { min-width: 0; }
+@media (min-width: 1080px) {
+  .chapter { grid-template-columns: var(--rail) minmax(0, 1fr); }
+  .rail { position: sticky; top: 96px; display: block; }
+  .rail .rail__note, .rail .rail__link { display: block; margin-top: 8px; }
 }
 
-// Header
+// Full-width bands used on the home page and for the join call-to-action.
+.band-section { border-top: 1px solid var(--line); }
+.band-section--cloud { background: var(--cloud); border-top: 0; }
+.band-section--navy { background: var(--navy); color: var(--on-navy); border-top: 0; }
+.band-section .chapter { border-top: 0; }
+
+// Header ---------------------------------------------------------------------------
 .site-header {
   position: sticky; top: 0; z-index: 50;
   background: var(--navy); color: var(--on-navy);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-.nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; }
+.nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; }
 .brand {
-  display: flex; align-items: center; gap: 11px; color: inherit; text-decoration: none;
+  display: flex; align-items: center; gap: 12px; color: inherit; text-decoration: none;
   .brand-mark { flex: none; }
   .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
-  .brand__name { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.01em; }
-  .brand__sub { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-navy-muted); margin-top: 3px; }
+  .brand__name { font-family: var(--font-display); font-weight: 500; font-size: 1.2rem; }
+  .brand__sub { font-size: 0.75rem; color: var(--on-navy-muted); margin-top: 3px; }
   &:hover { color: inherit; }
 }
 .nav-links {
-  display: flex; gap: clamp(10px, 2vw, 26px); list-style: none; margin: 0; padding: 0;
+  display: flex; gap: clamp(8px, 1.8vw, 24px); list-style: none; margin: 0; padding: 0;
   a {
-    display: block; padding: 24px 2px; color: var(--on-navy-muted); text-decoration: none;
-    font-size: 0.9rem; font-weight: 500; letter-spacing: 0.01em; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s;
+    display: block; padding: 22px 2px; color: var(--on-navy-muted); text-decoration: none;
+    font-size: 0.9375rem; font-weight: 500; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s;
     &:hover { color: var(--on-navy); }
     &[aria-current="page"] { color: var(--on-navy); border-bottom-color: var(--red); }
   }
 }
 .nav-actions { display: flex; align-items: center; gap: 6px; }
 .theme-toggle, .nav-toggle {
-  width: 38px; height: 38px; display: grid; place-items: center; border-radius: 8px;
+  width: 38px; height: 38px; display: grid; place-items: center; border-radius: 4px;
   background: transparent; border: 1px solid transparent; color: var(--on-navy-muted); cursor: pointer;
-  &:hover { color: var(--on-navy); border-color: rgba(255, 255, 255, 0.18); }
+  &:hover { color: var(--on-navy); border-color: rgba(255, 255, 255, 0.2); }
 }
 .theme-toggle .icon--moon { display: none; }
 :root[data-theme="dark"] .theme-toggle { .icon--sun { display: none; } .icon--moon { display: block; } }
@@ -49,7 +67,6 @@
 }
 .nav-toggle__bar::before { position: absolute; top: -6px; }
 .nav-toggle__bar::after { position: absolute; top: 6px; }
-
 @media (max-width: 880px) {
   .nav-toggle { display: grid; }
   .site-nav { position: absolute; left: 0; right: 0; top: 100%; background: var(--navy); border-bottom: 1px solid rgba(255,255,255,.1); }
@@ -60,34 +77,32 @@
   }
 }
 
-// Page banner
+// Page banner ------------------------------------------------------------------------
 .banner {
-  padding: clamp(44px, 6vw, 72px) 0 clamp(28px, 4vw, 44px);
-  border-bottom: 1px solid var(--line);
-  background:
-    radial-gradient(circle at 1px 1px, var(--grid-dot) 1px, transparent 1.2px) 0 0 / 22px 22px,
-    linear-gradient(180deg, var(--cloud), var(--paper));
-  h1 { max-width: 20ch; }
+  padding: clamp(48px, 7vw, 96px) 0 clamp(32px, 4vw, 56px);
+  h1 { max-width: 22ch; margin-bottom: 0.35em; }
+  &--project h1 { font-size: clamp(2rem, 3.6vw, 3.1rem); max-width: 26ch; }
+  .lede { margin-top: 0; }
 }
-.lede { font-size: clamp(1.05rem, 1.6vw, 1.22rem); color: var(--muted); max-width: 64ch; margin: 0; line-height: 1.55; }
-.page-body { padding: clamp(40px, 6vw, 72px) 0 clamp(64px, 8vw, 110px); }
+.banner__crumb { margin: 0 0 14px; a { text-decoration: none; color: var(--muted); &:hover { color: var(--red); } } }
+.banner__tags { margin-top: 18px; }
+.page-body { padding: 0 0 clamp(64px, 8vw, 120px); }
 
-// Footer
+// Footer -----------------------------------------------------------------------------
 .site-footer {
-  margin-top: 40px; background: var(--navy); color: var(--on-navy-muted); font-size: 0.92rem;
+  margin-top: 0; background: var(--navy); color: var(--on-navy-muted); font-size: 0.9375rem;
   a { color: var(--on-navy-muted); text-decoration: none; &:hover { color: var(--on-navy); text-decoration: underline; } }
 }
-.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; padding: 56px 0 32px; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; padding: 56px 0 36px; }
 .footer-col p { margin: 0 0 10px; }
 .footer-col--brand .brand { margin-bottom: 18px; }
-.brand--footer .brand__sub { text-transform: none; letter-spacing: 0.04em; font-size: 0.7rem; }
-.footer-address { font-size: 0.84rem; line-height: 1.6; }
-.footer-heading { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-navy); margin-bottom: 14px; }
+.brand--footer .brand__sub { font-size: 0.75rem; }
+.footer-address { font-size: 0.875rem; line-height: 1.6; }
+.footer-heading { font-family: var(--font-display); font-size: 1.05rem; color: var(--on-navy); margin: 0 0 12px; }
 .footer-links { list-style: none; margin: 0; padding: 0; li { margin-bottom: 8px; } }
-.footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 22px 0 30px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-.footer-ack { font-size: 0.82rem; font-style: italic; max-width: 62ch; margin: 0; }
-.footer-meta { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; margin: 0; white-space: nowrap; }
+.footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.12); padding: 22px 0 32px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.footer-ack { font-size: 0.875rem; font-family: var(--font-display); font-style: italic; max-width: 60ch; margin: 0; }
+.footer-meta { font-size: 0.8125rem; margin: 0; }
 @media (max-width: 760px) {
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-  .footer-meta { white-space: normal; }
 }

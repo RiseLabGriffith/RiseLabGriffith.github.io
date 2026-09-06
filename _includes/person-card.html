@@ -1,13 +1,12 @@
 {%- comment -%}
-One member card. Usage: {% include person-card.html person=p detail=true %}
-detail=true adds the biography (used for the director and academic members).
+One member entry. Usage: {% include person-card.html person=p detail=true %}
+detail=true renders the larger row with photo and biography (director and academic members).
 {%- endcomment -%}
 {%- assign p = include.person -%}
 {%- assign parts = p.name | split: " " -%}
-{%- assign initials = parts.first | slice: 0 | append: parts.last | slice: 0, 1 -%}
 {%- assign first_initial = parts.first | slice: 0 -%}{%- assign last_initial = parts.last | slice: 0 -%}
 {%- assign profile = p.links.homepage | default: p.links.griffith | default: p.links.scholar -%}
-<article class="person" id="{{ p.id }}" data-layers="{{ p.layers | join: ' ' }}" data-role="{{ p.role }}">
+<article class="person{% if include.detail %} person--detail{% endif %}" id="{{ p.id }}" data-layers="{{ p.layers | join: ' ' }}" data-role="{{ p.role }}">
   {%- if p.photo -%}
   <img class="person__photo" src="{{ '/assets/img/people/' | append: p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="180" height="180" loading="lazy">
   {%- else -%}
@@ -18,8 +17,8 @@ detail=true adds the biography (used for the director and academic members).
       {%- if profile -%}<a href="{{ profile }}" rel="noopener">{% if p.title %}{{ p.title }} {% endif %}{{ p.name }}</a>{%- else -%}{% if p.title %}{{ p.title }} {% endif %}{{ p.name }}{%- endif -%}
       {%- if p.note %} <span class="person__note">{{ p.note }}</span>{% endif -%}
     </h3>
-    <p class="person__position">{{ p.position }}{% if p.affiliation %} · {{ p.affiliation }}{% endif %}{% if p.since %} <span class="person__since">since {{ p.since }}</span>{% endif %}</p>
-    {%- if p.interests -%}<p class="person__interests">{{ p.interests | join: " · " }}</p>{%- endif -%}
+    <p class="person__position">{{ p.position }}{% if p.affiliation %}, {{ p.affiliation }}{% endif %}{% if p.since %} <span class="person__since">since {{ p.since }}</span>{% endif %}</p>
+    {%- if p.interests -%}<p class="person__interests">{{ p.interests | join: ", " }}</p>{%- endif -%}
     {%- if include.detail and p.bio -%}<p class="person__bio">{{ p.bio }}</p>{%- endif -%}
     {%- if p.supervisors -%}
     <p class="person__supervisors meta">With
