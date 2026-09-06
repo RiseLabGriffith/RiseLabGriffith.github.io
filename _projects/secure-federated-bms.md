@@ -1,5 +1,6 @@
 ---
 title: Secure Federated Battery Management System for Distributed Energy Storage Assets
+date: 2026-09-06
 summary: A privacy-preserving, attack-resilient federated learning platform for battery health and safety across fleets of distributed energy storage assets.
 kind: funded
 status: active

@@ -8,7 +8,15 @@ address_gc: Gold Coast campus, Parklands Drive, Southport QLD 4222, Australia
 address_nathan: Nathan campus, 170 Kessels Road, Nathan QLD 4111, Australia
 email: leo.zhang@griffith.edu.au
 github: https://github.com/RiseLabGriffith
+university_url: https://www.griffith.edu.au/
 school_url: https://www.griffith.edu.au/griffith-sciences/school-information-communication-technology
+# Postal address of the primary campus in the form search engines expect (structured data on the home page).
+postal:
+  street: Parklands Drive
+  locality: Southport
+  region: QLD
+  postcode: "4222"
+  country: AU
 acknowledgement: >
   We acknowledge the Traditional Custodians of the lands on which Griffith University's campuses stand,
   and pay respect to Elders past and present.

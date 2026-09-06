@@ -1,5 +1,6 @@
 ---
 title: Secure Collaborative Analytics
+date: 2026-09-06
 summary: Practical secure multi-party computation, homomorphic encryption and trusted-execution designs that let several organisations compute joint insights on health, financial and security data without revealing their inputs.
 kind: direction
 status: proposed

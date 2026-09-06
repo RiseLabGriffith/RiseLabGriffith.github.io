@@ -1,5 +1,6 @@
 ---
 title: Digital Content Protector
+date: 2026-09-06
 summary: Deployable verification of watermarks in AI-generated and AI-edited content, developed with CSIRO Data61 to help platforms and users tell authentic media from manipulated media.
 kind: software
 status: active

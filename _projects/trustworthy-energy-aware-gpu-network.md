@@ -1,5 +1,6 @@
 ---
 title: Trustworthy, Energy-Aware Computing Load Balancing for a Distributed Residential GPU Network
+date: 2026-09-06
 summary: Secure scheduling and telemetry integrity for a network of residential GPUs that trade compute against local energy availability.
 kind: funded
 status: active

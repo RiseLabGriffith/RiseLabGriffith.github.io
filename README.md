@@ -73,7 +73,7 @@ Move people to `role: alumni` rather than deleting them so that their publicatio
 
 ### Add a project
 
-Copy `_projects/_template.md` to `_projects/my-project.md` and edit the front matter (`title`, `summary`, `kind`, `status`, `layers`, `members`, optional `funder`, `funding`, `years`, `partners`, `links`, `topics`, `featured`, `order`) and the Markdown body. The page appears at `/projects/my-project/` and in the matching group on the Projects page. Set `featured: true` to show it on the home page (the first three by `order`). Keep the featured set led by different members; `tests/test_content.py` checks that their first-listed members are distinct.
+Copy `_projects/_template.md` to `_projects/my-project.md` and edit the front matter (`title`, `date`, `summary`, `kind`, `status`, `layers`, `members`, optional `funder`, `funding`, `years`, `partners`, `links`, `topics`, `featured`, `order`) and the Markdown body. The page appears at `/projects/my-project/` and in the matching group on the Projects page. Set `featured: true` to show it on the home page (the first three by `order`). Keep the featured set led by different members; `tests/test_content.py` checks that their first-listed members are distinct.
 
 ### Add an event or an opening
 
@@ -117,6 +117,18 @@ python3 -m pytest tests -q
 ## Deployment
 
 `.github/workflows/jekyll.yml` runs on every push to `main`: it validates the data, builds the site with `JEKYLL_ENV=production` and deploys it to GitHub Pages. The repository's Pages setting must be **GitHub Actions** (not "Deploy from a branch"). Site-wide settings such as the title, description and URL are in `_config.yml`; the site is served from the organisation root, so `baseurl` stays empty.
+
+## Search engines and link previews
+
+The site ships the metadata search engines and chat or social apps read, so nothing needs to be done per page:
+
+- **Titles and descriptions.** Every page's `title` and `description` front matter become the browser title, the search snippet and the link-preview text. Keep descriptions under 160 characters. Project pages reuse their `summary` automatically (`_plugins/seo_defaults.rb`).
+- **Preview image.** Links shared on LinkedIn, X, Slack or Teams show `assets/img/og-image.png`; `assets/img/logo.png` is the square logo in structured data. Both are rendered from the SVG sources in `scripts/social/` by `scripts/make_social_images.sh` (needs `rsvg-convert`, from `brew install librsvg`). Edit the SVG and rerun the script rather than editing the PNGs.
+- **Structured data.** `_includes/structured-data.html` describes the lab as a research organisation (home page, from `_data/site.yml` including the `postal` address), each academic as a person with their ORCID, Scholar and other profile links (People page, from `links` in `people.yml`) and breadcrumbs on project pages. Check a live page with Google's [Rich Results Test](https://search.google.com/test/rich-results).
+- **Sitemap and dates.** `sitemap.xml` and `robots.txt` are generated. Last-modified dates come from git history, which is why the deploy workflow checks out the full history. Each project has a fixed `date` (when the page was first published); do not bump it on edits.
+- **Verification.** To register the site with [Google Search Console](https://search.google.com/search-console) and [Bing Webmaster Tools](https://www.bing.com/webmasters), uncomment `webmaster_verifications` in `_config.yml`, paste the tokens, deploy, then submit `https://riselabgriffith.github.io/sitemap.xml` in each console. This is a one-off manual step.
+
+`tests/test_seo.py` checks all of the above on the built site.
 
 ## Design notes
 

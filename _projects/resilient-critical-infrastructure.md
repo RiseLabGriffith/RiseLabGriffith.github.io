@@ -1,5 +1,6 @@
 ---
 title: Resilient Security for Critical Infrastructure and Energy Systems
+date: 2026-09-06
 summary: Security architectures for distributed energy assets and other critical infrastructure, where AI-enabled control, federated data and physical consequences meet.
 kind: direction
 status: active

@@ -2,7 +2,7 @@
 layout: default
 title: RISE Lab
 permalink: /
-description: RISE Lab is a researcher-led cybersecurity lab in the School of ICT at Griffith University, engineering responsible, intelligent and secure systems across the full lifecycle.
+description: RISE Lab is a researcher-led cybersecurity lab at Griffith University engineering responsible, intelligent and secure systems across the full lifecycle.
 body_class: home
 ---
 
