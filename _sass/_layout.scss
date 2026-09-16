@@ -35,7 +35,7 @@
 .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; }
 .brand {
   display: flex; align-items: center; gap: 12px; color: inherit; text-decoration: none;
-  .brand-mark { flex: none; }
+  .brand-mark { flex: none; width: 32px; height: 32px; object-fit: contain; }
   .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
   .brand__name { font-family: var(--font-display); font-weight: 500; font-size: 1.2rem; }
   .brand__sub { font-size: 0.75rem; color: var(--on-navy-muted); margin-top: 3px; }

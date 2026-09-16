@@ -38,6 +38,7 @@ body_class: home
 <section class="hero">
   <div class="container hero__grid">
     <div class="hero__copy">
+      <img class="hero__logo" src="{{ '/assets/img/logo-mark.png' | relative_url }}" width="512" height="512" alt="RISE Lab emblem: a shield of circuit traces rising into an arrow" fetchpriority="high" decoding="async">
       <h1 class="wordmark" aria-label="RISE Lab">
         <span class="wordmark__word" aria-hidden="true">
           {%- for layer in layers -%}

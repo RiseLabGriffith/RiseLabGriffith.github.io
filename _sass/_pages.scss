@@ -4,6 +4,7 @@
 .hero { overflow: hidden; padding: clamp(44px, 6.5vw, 96px) 0 clamp(40px, 6vw, 88px); }
 .hero__grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
 .hero__copy { min-width: 0; }
+.hero__logo { display: block; width: clamp(64px, 8vw, 104px); height: auto; margin: 0 0 18px; }
 .wordmark {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.2em; margin: 0 0 22px;
   font-size: clamp(4rem, 9vw, 7.5rem); font-weight: 500; line-height: 0.95; letter-spacing: -0.03em;
