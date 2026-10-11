@@ -93,7 +93,7 @@
   position: Lecturer
   photo: yi-liu.jpg
   email: yi.liu@griffith.edu.au
-  note: Incoming 2026
+  note: Joined 2026
   links:
     homepage: https://liuyi-academic.github.io/
     scholar: https://scholar.google.com/citations?user=DcFodKsAAAAJ
@@ -102,7 +102,7 @@
   interests: [LLM security, AI agent security, Software engineering and testing, Automated penetration testing]
   layers: [I, E]
   bio: >
-    Yi Liu is an incoming Lecturer, after a PhD at Nanyang Technological University and a role as AI Research
+    Yi Liu joined Griffith as a Lecturer in 2026, after a PhD at Nanyang Technological University and a role as AI Research
     Engineer at Quantstamp. He works on LLM and AI agent security and software testing, with papers at IEEE S&P,
     CCS, USENIX Security, NDSS and ICSE, and is a core contributor to PentestGPT.
 
@@ -113,7 +113,7 @@
   position: Lecturer
   photo: wei-song.jpg
   email: w.song@griffith.edu.au
-  note: Incoming 2026
+  note: Joined 2026
   links:
     homepage: https://wweisong.github.io/
     scholar: https://scholar.google.com.au/citations?user=HrA4BoYAAAAJ
@@ -122,7 +122,7 @@
   interests: [Adversarial machine learning, AI watermarking, AI security for energy systems, Video LLM safety]
   layers: [I, E]
   bio: >
-    Wei Song is an incoming Lecturer, after a PhD and postdoctoral fellowship at UNSW Sydney. He works on
+    Wei Song joined Griffith as a Lecturer in 2026, after a PhD and postdoctoral fellowship at UNSW Sydney. He works on
     adversarial machine learning, AI watermarking and AI security for energy systems, leads AUD 3.9M of funded
     work on secure AI for distributed energy assets and co-founded the spinout SunstackAI.
 

@@ -6,9 +6,21 @@
 #   selected (true to feature on the home page and at the top of its year), badge (optional, e.g. "CORE A*"),
 #   links {pdf, doi, arxiv, code, slides, url}.
 # To add a paper, copy an entry and edit it, or run the import script (see README).
+- id: zhang2027cutting
+  title: "Cutting Tokens, Creating Threats: Evaluating Token Compression-Induced Vulnerabilities in Large Vision-Language Models"
+  authors: ["Xiaomei Zhang", "Zhaoxi Zhang", "Leo Yu Zhang", "Yanjun Zhang", "Guanhong Tao", "Shirui Pan"]
+  venue: "NDSS"
+  venue_full: "Network and Distributed System Security Symposium"
+  year: 2027
+  type: conference
+  layers: [I]
+  topics: [llm-agent-security]
+  members: [leo-zhang, yanjun-zhang, xiaomei-zhang, zhaoxi-zhang]
+  selected: true
+  links: {arxiv: "https://arxiv.org/abs/2601.12042"}
 - id: liu2026do
-  title: "\"Do Not Mention This to the User\": Detecting and Understanding Malicious Agent Skills"
-  authors: ["Yi Liu", "Zhihao Chen", "Yanjun Zhang", "Gelei Deng", "Yuekang Li", "Jianting Ning", "Ying Zhang", "Leo Yu Zhang"]
+  title: "\"Do Not Mention This to the User\": Detecting and Understanding Malicious Agent Skills in the Wild"
+  authors: ["Yi Liu", "Zhihao Chen", "Yanjun Zhang", "Gelei Deng", "Yuekang Li", "Jianting Ning", "Leo Yu Zhang"]
   venue: "USENIX Security"
   venue_full: "USENIX Security Symposium"
   year: 2026
@@ -110,6 +122,18 @@
   members: [leo-zhang]
   selected: true
   links: {doi: "https://doi.org/10.1109/TIFS.2026.3684835"}
+- id: cao2026videostf
+  title: "VideoSTF: Stress-Testing Output Repetition in Video Large Language Models"
+  authors: ["Yuxin Cao", "Wei Song", "Shangzhi Xu", "Jingling Xue", "Jin Song Dong"]
+  venue: "NeurIPS"
+  venue_full: "Conference on Neural Information Processing Systems"
+  year: 2026
+  type: conference
+  layers: [I]
+  topics: [llm-agent-security]
+  members: [wei-song, yuxin-cao]
+  selected: true
+  links: {arxiv: "https://arxiv.org/abs/2602.10639"}
 - id: miao2026multi
   title: "A Multi-Grained Parallel Spatio-Temporal Learning Architecture for Deepfake Video Detection"
   authors: ["Hui Miao", "Yuanfang Guo", "Leo Yu Zhang", "Jiantao Zhou", "Yunhong Wang"]
@@ -152,6 +176,17 @@
   topics: [transparency-accountability]
   members: [qinyi-li]
   links: {doi: "https://doi.org/10.1016/J.INS.2026.123703"}
+- id: zhou2026achieving
+  title: "Achieving Adversarial Robustness without Adversarial Training: Robust Dataset Distillation"
+  authors: ["Yuhang Zhou", "Zhongyun Hua", "Nankun Mu", "Yushu Zhang", "Qing Liao", "Leo Yu Zhang"]
+  venue: "IEEE TDSC"
+  venue_full: "IEEE Transactions on Dependable and Secure Computing"
+  year: 2026
+  type: journal
+  layers: [R]
+  topics: [robustness-safety-resilience]
+  members: [leo-zhang, yuhang-zhou]
+  links: {doi: "https://doi.org/10.1109/TDSC.2026.3738360"}
 - id: liu2026agent
   title: "Agent Skills in the Wild: An Empirical Study of Security Vulnerabilities at Scale"
   authors: ["Yi Liu", "Weizhe Wang", "Ruitao Feng", "Yao Zhang", "Guangquan Xu", "Gelei Deng", "Yuekang Li", "Leo Zhang"]
@@ -163,6 +198,27 @@
   topics: [llm-agent-security]
   members: [leo-zhang, yi-liu]
   links: {arxiv: "https://arxiv.org/abs/2601.10338"}
+- id: ding2026ai
+  title: "AI Slop and Hallucinations in Vulnerability Assessment: A Survey on Reasoning Failures and Trustworthy Mitigation"
+  authors: ["Junchen Ding", "Jialiang Dong", "Yichen Zhu", "Yi Liu", "Gelei Deng", "Willy Susilo", "Siqi Ma", "Yuekang Li"]
+  venue: "SiMLA"
+  year: 2026
+  type: workshop
+  layers: [I]
+  topics: [secure-software-engineering]
+  members: [yi-liu]
+  links: {arxiv: "https://arxiv.org/abs/2608.25667"}
+- id: zhang2026ndimensional
+  title: "An n-Dimensional Discrete Chaotic Model and Its Application"
+  authors: ["Zhiqiang Zhang", "Liping Liao", "Yongdong Wang", "Mingyue Wang", "Yong Wang", "Leo Yu Zhang"]
+  venue: "IEEE TSMC"
+  venue_full: "IEEE Transactions on Systems, Man, and Cybernetics: Systems"
+  year: 2026
+  type: journal
+  layers: [S]
+  topics: [cryptographic-protocols]
+  members: [leo-zhang]
+  links: {doi: "https://doi.org/10.1109/TSMC.2026.3715669"}
 - id: wang2026anamorphic
   title: "Anamorphic Encryption with CCA Security: A Standard Model Construction"
   authors: ["Shujun Wang", "Jianting Ning", "Qinyi Li", "Leo Yu Zhang"]
@@ -216,6 +272,17 @@
   topics: [privacy-preserving-data]
   members: [leo-zhang, yanjun-zhang, zhihao-chen, zirui-gong]
   links: {doi: "https://doi.org/10.1145/3774904.3792604", arxiv: "https://arxiv.org/abs/2601.14687"}
+- id: huang2026bpo
+  title: "BPO: Backdoor Purification via Overwriting"
+  authors: ["Lin Huang", "Tinghua Wang", "Leo Yu Zhang", "Chuan Qin", "Xinpeng Zhang"]
+  venue: "IEEE TKDE"
+  venue_full: "IEEE Transactions on Knowledge and Data Engineering"
+  year: 2026
+  type: journal
+  layers: [R]
+  topics: [robustness-safety-resilience]
+  members: [leo-zhang]
+  links: {doi: "https://doi.org/10.1109/TKDE.2026.3717987"}
 - id: wu2026cia
   title: "CIA: Inferring the Communication Topology from LLM-based Multi-Agent Systems"
   authors: ["Yongxuan Wu", "Xixun Lin", "He Zhang", "Nan Sun", "Kun Wang", "Chuan Zhou", "Shirui Pan", "Yanan Cao"]
@@ -257,6 +324,16 @@
   layers: [R]
   members: [leo-zhang]
   links: {doi: "https://doi.org/10.1016/J.ESWA.2025.130143"}
+- id: dong2026crosssteer
+  title: "CrossSteer: Cross-Modal Safety Steering for Audio-Language Models"
+  authors: ["Houde Dong", "Weifei Jin", "Yuxin Cao", "Wei Song", "Derui Wang", "Jie Hao"]
+  venue: "NeurIPS"
+  venue_full: "Conference on Neural Information Processing Systems"
+  year: 2026
+  type: conference
+  layers: [I]
+  topics: [llm-agent-security]
+  members: [wei-song, yuxin-cao]
 - id: zhou2026debiased
   title: "Debiased Dual-Invariant Defense for Adversarially Robust Person Re-Identification"
   authors: ["Yuhang Zhou", "Yanxiang Zhao", "Zhongyun Hua", "Zhipu Liu", "Zhaoquan Gu", "Qing Liao", "Leo Yu Zhang"]
@@ -287,6 +364,17 @@
   layers: [R]
   topics: [transparency-accountability]
   members: [wei-song]
+- id: gill2026designing
+  title: "Designing an Observable Human-Centric Agentic AI System Architecture for Decision-Making"
+  authors: ["Asif Qumer Gill", "Yanjun Zhang"]
+  venue: "EDOC Workshops"
+  venue_full: "Enterprise Design, Operations, and Computing (EDOC) Workshops"
+  year: 2026
+  type: workshop
+  layers: [E]
+  topics: [engineering-toolchains]
+  members: [yanjun-zhang]
+  links: {doi: "https://doi.org/10.1007/978-3-032-16234-2_1"}
 - id: liu2026distributed
   title: "Distributed Backdoor Attack Against Knowledge Distillation-Based Federated Learning"
   authors: ["Xinrui Liu", "Nankun Mu", "Zhaoquan Gu", "Zhongyun Hua", "Leo Yu Zhang"]
@@ -363,6 +451,16 @@
   topics: [llm-agent-security]
   members: [wei-song, haonan-zhong]
   links: {arxiv: "https://arxiv.org/abs/2601.20791"}
+- id: haider2026fedcsga
+  title: "FedCSGA: Evolutionary client selection with joint statistical and system heterogeneity in federated learning"
+  authors: ["Ghani Haider", "Majid Kundroo", "Leo Yu Zhang", "Jinchul Choi", "Taehong Kim"]
+  venue: "Journal of Systems Architecture"
+  year: 2026
+  type: journal
+  layers: [S]
+  topics: [privacy-preserving-data]
+  members: [leo-zhang, taehong-kim]
+  links: {doi: "https://doi.org/10.1016/j.sysarc.2026.103813"}
 - id: li2026fine
   title: "Fine-Grained Poisoning Framework Against Federated Learning"
   authors: ["Minghui Li", "Hangtao Zhang", "Yanjun Zhang", "Li Zeng", "Chao Chen", "Qiyun Shao", "Wei Wan", "Shengshan Hu", "Leo Yu Zhang"]
@@ -395,6 +493,17 @@
   topics: [threat-intelligence-analytics]
   members: [he-zhang]
   links: {doi: "https://doi.org/10.1609/AAAI.V40I19.38617", arxiv: "https://arxiv.org/abs/2602.17342"}
+- id: zhang2026fssdm
+  title: "FSSDM: A Maliciously Secure Inference Scheme for Diffusion Models with Function Secret Sharing"
+  authors: ["Wang Zhang", "Fuyi Wang", "Rongfang Bie", "Leo Yu Zhang", "Yu Guo", "Xiaohua Jia"]
+  venue: "IEEE TDSC"
+  venue_full: "IEEE Transactions on Dependable and Secure Computing"
+  year: 2026
+  type: journal
+  layers: [S]
+  topics: [secure-computation]
+  members: [leo-zhang]
+  links: {doi: "https://doi.org/10.1109/TDSC.2026.3735518"}
 - id: liu2026gradient
   title: "Gradient Structure Estimation under Label-Only Oracles via Spectral Sensitivity"
   authors: ["Jun Liu", "Leo Yu Zhang", "Fengpeng Li", "Isao Echizen", "Jiantao Zhou"]
@@ -405,6 +514,17 @@
   layers: [R]
   members: [leo-zhang]
   links: {arxiv: "https://arxiv.org/abs/2601.14300"}
+- id: gong2026how
+  title: "How Do Agentic LLMs Decide to Call Tools? A Tool-Call Vector Shaped by Suppression"
+  authors: ["Xijie Gong", "Tingxu Han", "Jiahao Zhang", "Wei Song", "Ziqi Ding", "Hanqi Yan", "Youcheng Sun", "Lijie Hu"]
+  venue: "NeurIPS"
+  venue_full: "Conference on Neural Information Processing Systems"
+  year: 2026
+  type: conference
+  layers: [I]
+  topics: [llm-agent-security]
+  members: [wei-song, ziqi-ding]
+  links: {arxiv: "https://arxiv.org/abs/2610.09624"}
 - id: wang2026image
   title: "Image-to-Video Diffusion: From Foundations to Open Frontiers"
   authors: ["Xianlong Wang", "Wenbo Pan", "Shijia Zhou", "Ke Li", "Yuqi Wang", "Zeyu Ye", "Hangtao Zhang", "Leo Yu Zhang", "Xiaohua Jia"]
@@ -419,10 +539,10 @@
 - id: lu2026imperceptible
   title: "Imperceptible and Reversible Adversarial Examples against Vision-Language Models for Privacy Protection"
   authors: ["Qi Lu", "Ziqi Zhou", "Yufei Song", "Zijing Li", "Lulu Xue", "Minghui Li", "Shengshan Hu", "Leo Yu Zhang"]
-  venue: "arXiv"
-  venue_full: "arXiv preprint"
+  venue: "ACM MM"
+  venue_full: "ACM International Conference on Multimedia"
   year: 2026
-  type: preprint
+  type: conference
   layers: [R]
   topics: [robustness-safety-resilience]
   members: [leo-zhang, lulu-xue]
@@ -449,17 +569,6 @@
   topics: [robustness-safety-resilience]
   members: [leo-zhang]
   links: {doi: "https://doi.org/10.1109/TETC.2025.3631134"}
-- id: zhang2026less
-  title: "Less Is More - Until It Breaks: Security Pitfalls of Vision Token Compression in Large Vision-Language Models"
-  authors: ["Xiaomei Zhang", "Zhaoxi Zhang", "Leo Yu Zhang", "Yanjun Zhang", "Guanhong Tao", "Shirui Pan"]
-  venue: "arXiv"
-  venue_full: "arXiv preprint"
-  year: 2026
-  type: preprint
-  layers: [I]
-  topics: [llm-agent-security]
-  members: [leo-zhang, yanjun-zhang, xiaomei-zhang, zhaoxi-zhang]
-  links: {arxiv: "https://arxiv.org/abs/2601.12042"}
 - id: lv2026lightweight
   title: "Lightweight multi-client order-revealing encryption with limited leakage"
   authors: ["Chunyang Lv", "Jianfeng Wang", "Shifeng Sun", "Saiyu Qi", "Chao Chen", "Leo Yu Zhang", "Kok-Leong Ong"]
@@ -481,6 +590,17 @@
   topics: [llm-agent-security]
   members: [yi-liu]
   links: {doi: "https://doi.org/10.18653/V1/2026.ACL-LONG.260", arxiv: "https://arxiv.org/abs/2601.19487"}
+- id: liu2026low
+  title: "Low-Cost Hard-Label Adversarial Attack with Theoretical Foundations"
+  authors: ["Jun Liu", "Leo Yu Zhang", "Fengpeng Li", "Isao Echizen", "Jiantao Zhou"]
+  venue: "USENIX Security"
+  venue_full: "USENIX Security Symposium"
+  year: 2026
+  type: conference
+  layers: [R]
+  topics: [robustness-safety-resilience]
+  members: [leo-zhang]
+  links: {arxiv: "https://arxiv.org/abs/2601.14300"}
 - id: liu2026malicious
   title: "Malicious Agent Skills in the Wild: A Large-Scale Security Empirical Study"
   authors: ["Yi Liu", "Zhihao Chen", "Yanjun Zhang", "Gelei Deng", "Yuekang Li", "Jianting Ning", "Leo Yu Zhang"]
@@ -524,6 +644,17 @@
   topics: [llm-agent-security]
   members: [leo-zhang, yi-liu, ruoqi-guo]
   links: {arxiv: "https://arxiv.org/abs/2605.28116"}
+- id: zhou2026nasty
+  title: "Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement"
+  authors: ["Yuhang Zhou", "Zhongyun Hua", "Zhaoquan Gu", "Keke Tang", "Rushi Lan", "Yushu Zhang", "Qing Liao", "Leo Yu Zhang"]
+  venue: "ICLR"
+  venue_full: "International Conference on Learning Representations"
+  year: 2026
+  type: conference
+  layers: [R]
+  topics: [robustness-safety-resilience]
+  members: [leo-zhang, yuhang-zhou]
+  links: {url: "https://openreview.net/forum?id=eCXpA14KHd"}
 - id: ding2026ngcaptcha
   title: "NgCaptcha: A CAPTCHA Bridging the Past and the Future"
   authors: ["Ziqi Ding", "Shangzhi Xu", "Wei Song", "Yuekang Li"]
@@ -533,6 +664,17 @@
   layers: [S]
   topics: [cryptographic-protocols]
   members: [wei-song, ziqi-ding]
+- id: song2026oblivigate
+  title: "ObliviGate: Toward Architecture-Oblivious Privacy-Preserving Inference for Malicious Security"
+  authors: ["Nianyun Song", "Fuyi Wang", "Rongfang Bie", "Yu Guo", "Leo Yu Zhang", "Xiaohua Jia"]
+  venue: "IEEE TSC"
+  venue_full: "IEEE Transactions on Services Computing"
+  year: 2026
+  type: journal
+  layers: [S]
+  topics: [secure-computation]
+  members: [leo-zhang]
+  links: {doi: "https://doi.org/10.1109/TSC.2026.3686705"}
 - id: qu2026overeager
   title: "Overeager Coding Agents: Measuring Out-of-Scope Actions on Benign Tasks"
   authors: ["Yubin Qu", "Ying Zhang", "Yanjun Zhang", "Gelei Deng", "Yuekang Li", "Leo Yu Zhang", "Yi Liu"]
@@ -544,6 +686,17 @@
   topics: [llm-agent-security]
   members: [leo-zhang, yanjun-zhang, yi-liu]
   links: {arxiv: "https://arxiv.org/abs/2605.18583"}
+- id: huang2026persistent
+  title: "Persistent Backdoor Attacks in Class-Incremental Learning via Structural Invariant Anchoring"
+  authors: ["Junhuang Huang", "Linshan Hou", "Jianting Ning", "Yanjun Zhang", "Zhongyun Hua", "Leo Yu Zhang"]
+  venue: "ICML"
+  venue_full: "International Conference on Machine Learning"
+  year: 2026
+  type: conference
+  layers: [R]
+  topics: [robustness-safety-resilience]
+  members: [leo-zhang, yanjun-zhang]
+  links: {url: "https://openreview.net/forum?id=GCm1xe3Clh"}
 - id: deng2026pgrm
   title: "PGRM: Positive-unlabeled enhanced recommendation model based on generative adversarial network"
   authors: ["Jiangzhou Deng", "Huilin Jin", "Zhiqiang Zhang", "Jianmei Ye", "Yong Wang", "Leo Yu Zhang", "Kobiljon Kh. Khushvakhtzoda"]
@@ -576,6 +729,16 @@
   topics: [robustness-safety-resilience]
   members: [leo-zhang, yanjun-zhang]
   links: {doi: "https://doi.org/10.56553/POPETS-2026-0042"}
+- id: chen2026privacy
+  title: "Privacy-Preserving and Fair Training for Federated GNN"
+  authors: ["Jiaqiang Chen", "He Zhang", "Xiaoning Liu", "Xun Yi"]
+  venue: "Journal of Cybersecurity and Privacy"
+  year: 2026
+  type: journal
+  layers: [S]
+  topics: [privacy-preserving-data]
+  members: [he-zhang]
+  links: {doi: "https://doi.org/10.3390/jcp6050151"}
 - id: wang2026privacy
   title: "Privacy-Preserving Automated Deep Learning for Secure Inference Service"
   authors: ["Fuyi Wang", "Jinzhi Ouyang", "Leo Yu Zhang", "Lei Pan", "Shengshan Hu", "Xiaoning Liu", "Robin Doss"]
@@ -770,6 +933,17 @@
   topics: [llm-agent-security]
   members: [yi-liu]
   links: {doi: "https://doi.org/10.1007/978-3-032-31583-0_5"}
+- id: zhou2026universal
+  title: "Universal Cross-Prompt Adversarial Attacks on Promptable Concept Segmentation"
+  authors: ["Ziqi Zhou", "Yifan Hu", "Yufei Song", "Haowen Jiang", "Xianlong Wang", "Shengshan Hu", "Dezhong Yao", "Leo Yu Zhang"]
+  venue: "NeurIPS"
+  venue_full: "Conference on Neural Information Processing Systems"
+  year: 2026
+  type: conference
+  layers: [R]
+  topics: [robustness-safety-resilience]
+  members: [leo-zhang]
+  links: {arxiv: "https://arxiv.org/abs/2609.39265"}
 - id: xue2026unlearnshield
   title: "UnlearnShield: Shielding Forgotten Privacy against Unlearning Inversion"
   authors: ["Lulu Xue", "Shengshan Hu", "Wei Lu", "Ziqi Zhou", "Yufei Song", "Jianhong Cheng", "Minghui Li", "Yanjun Zhang", "Leo Yu Zhang"]
@@ -781,17 +955,17 @@
   topics: [transparency-accountability]
   members: [leo-zhang, yanjun-zhang, lulu-xue]
   links: {arxiv: "https://arxiv.org/abs/2601.20325"}
-- id: cao2026videostf
-  title: "VideoSTF: Stress-Testing Output Repetition in Video Large Language Models"
-  authors: ["Yuxin Cao", "Wei Song", "Shangzhi Xu", "Jingling Xue", "Jin Song Dong"]
-  venue: "arXiv"
-  venue_full: "arXiv preprint"
+- id: liu2026vedl
+  title: "VeDL: Ensuring Verifiability for Privacy-Preserving Decentralized Learning"
+  authors: ["Xinrui Liu", "Zhongyun Hua", "Mingyang Song", "Yifeng Zheng", "Leo Yu Zhang", "Qing Liao"]
+  venue: "IEEE TDSC"
+  venue_full: "IEEE Transactions on Dependable and Secure Computing"
   year: 2026
-  type: preprint
-  layers: [I]
-  topics: [llm-agent-security]
-  members: [wei-song, yuxin-cao]
-  links: {arxiv: "https://arxiv.org/abs/2602.10639"}
+  type: journal
+  layers: [S]
+  topics: [verifiable-computation]
+  members: [leo-zhang]
+  links: {doi: "https://doi.org/10.1109/TDSC.2026.3737450"}
 - id: deng2026what
   title: "What Makes a Good LLM Agent for Real-world Penetration Testing?"
   authors: ["Gelei Deng", "Yi Liu", "Yuekang Li", "Ruozhao Yang", "Xiaofei Xie", "Jie Zhang", "Han Qiu", "Tianwei Zhang"]

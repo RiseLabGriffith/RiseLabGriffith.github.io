@@ -3,6 +3,18 @@
 # "year" or "month" when the exact day is not known; the timeline then shows only that much). Add new items at the top.
 # Keep the list balanced across members: the five newest items appear on the home page.
 - date: 2026-09-01
+  kind: paper
+  title: Four RISE papers accepted at NeurIPS 2026
+  text: Wei Song has three, on output repetition in video LLMs (VideoSTF, with Yuxin Cao), audio-language model safety steering (CrossSteer) and agentic tool calling (with Ziqi Ding); Leo Zhang co-authors universal cross-prompt attacks on concept segmentation.
+  members: [wei-song, yuxin-cao, ziqi-ding, leo-zhang]
+  precision: month
+- date: 2026-09-01
+  kind: paper
+  title: Vision token compression risks paper accepted at NDSS 2027
+  text: PhD students Xiaomei Zhang and Zhaoxi Zhang, with Yanjun Zhang and Leo Zhang, show that token compression, used to speed up large vision-language models, introduces new security vulnerabilities.
+  members: [xiaomei-zhang, zhaoxi-zhang, yanjun-zhang, leo-zhang]
+  precision: month
+- date: 2026-09-01
   kind: general
   title: RISE Lab is established at Griffith University
   text: Six academics in the School of ICT bring cyber defence, applied cryptography, privacy-preserving computation, trustworthy AI and secure software engineering under one framework, with joint supervision of PhD students.
@@ -49,8 +61,8 @@
   precision: month
 - date: 2026-04-01
   kind: paper
-  title: Two papers at USENIX Security 2026 on agent skills and jailbreak defence
-  text: "\"Do Not Mention This to the User\" detects malicious agent skills (Yi Liu, Zhihao Chen, Yanjun Zhang and Leo Zhang); a second paper by Yanjun Zhang, Yi Liu and Leo Zhang defends against jailbreaks using manifold trajectory kinetics."
+  title: Three papers at USENIX Security 2026 on agent skills, jailbreak defence and adversarial attacks
+  text: "\"Do Not Mention This to the User\" detects malicious agent skills (Yi Liu, Zhihao Chen, Yanjun Zhang, Leo Zhang); Yanjun Zhang, Yi Liu and Leo Zhang defend jailbreaks via manifold trajectory kinetics; Leo Zhang co-authors a low-cost hard-label attack."
   members: [yi-liu, zhihao-chen, yanjun-zhang, leo-zhang]
   precision: month
 - date: 2026-04-01
